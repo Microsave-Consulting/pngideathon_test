@@ -1,3 +1,14 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  -webkit-text-size-adjust: 100%; /* avoids weird font auto-zooming on iOS */
+  overflow-x: auto;              /* allows sideways scroll if anything overflows */
+  /* or overflow-x: hidden; if you prefer to hide any stray overflow */
+}
+
 .hackathon {
   background-color: #ffffff;
   width: 100%;
@@ -1653,4 +1664,5 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 24px;
+
 }
