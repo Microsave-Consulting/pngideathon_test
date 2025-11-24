@@ -1942,3 +1942,103 @@
     justify-content: center;
   }
 }
+
+
+/*********************************************
+  FINAL MOBILE PATCH – Fix right overflow +
+  Remove footer gap
+*********************************************/
+@media (max-width: 1024px) {
+
+  /* HARD RESET: stop any element from forcing horizontal scroll */
+  .hackathon *,
+  .hackathon *::before,
+  .hackathon *::after {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+  }
+
+  /* Fix ANY element that still has absolute positioning */
+  .rectangle-2,
+  .rectangle-3,
+  .rectangle-4,
+  .rectangle-5,
+  .rectangle-6,
+  .group-4,
+  .frame-14,
+  .frame-20,
+  .frame-21,
+  .frame-22 {
+    position: relative !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Remove fixed widths from all frames */
+  [class^="frame-"],
+  [class*=" frame-"] {
+    width: 100% !important;
+  }
+
+  /* Fix long text (emails, URLs, hashtags) */
+  a,
+  p,
+  div {
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    white-space: normal !important;
+  }
+
+  /* Specific fix for LinkedIn URL block */
+  .https-www-linkedin {
+    white-space: normal !important;
+  }
+
+  /* Specific fix for footer icon row */
+  .footer-inner {
+    margin-bottom: 0 !important;
+    padding-bottom: 16px !important;
+  }
+
+  /* Remove accidental negative margins creating huge gaps */
+  .hackathon > * {
+    margin-bottom: 0 !important;
+  }
+
+  /* Ensure footer attaches immediately below content */
+  .rectangle-5,
+  .rectangle-6 {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  /* Remove ghost space under the page */
+  body,
+  html {
+    height: auto !important;
+  }
+}
+
+/*********************************************
+  Extra patch for small phones
+*********************************************/
+@media (max-width: 600px) {
+
+  /* Fix any leftover long line text */
+  p,
+  a,
+  span,
+  div {
+    word-break: break-word !important;
+  }
+
+  /* Compress gaps caused by empty SVG blocks */
+  img {
+    display: block;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+}
