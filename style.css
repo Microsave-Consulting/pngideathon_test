@@ -1654,3 +1654,270 @@
   align-items: center;
   padding: 0 24px;
 }
+
+@media (max-width: 1440px) {
+  .hackathon {
+    min-width: unset !important;
+  }
+}
+
+body, html {
+  overflow-x: auto;   /* or scroll */
+}
+
+
+
+/* =========================================
+   RESPONSIVE OVERRIDES (TABLET + MOBILE)
+   ========================================= */
+@media (max-width: 1024px) {
+  .hackathon {
+    min-width: 0;              /* remove 1440px lock */
+    min-height: auto;          /* let height grow with content */
+    width: 100%;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  /* NAV BAR */
+  .hackathon .nav-bar {
+    position: relative;
+    width: 100%;
+    left: 0;
+    padding: 16px 16px;
+    box-sizing: border-box;
+  }
+
+  /* HERO SECTION (keeps left-side image, but scales to screen) */
+  .hackathon .frame-2 {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    padding: 80px 16px 32px;
+    box-sizing: border-box;
+    background-color: #303b6e;
+  }
+
+  .hackathon .overlap-group {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .hackathon .group {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+  }
+
+  .hackathon .group-2 {
+    position: relative;
+    width: 70%;
+    height: auto;
+    top: auto;
+    left: auto;
+    margin: 16px 0;
+  }
+
+  .hackathon .p {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    margin-top: 16px;
+    font-size: 20px;
+    padding-right: 0;
+  }
+
+  .hackathon .frame-3 {
+    position: relative;
+    top: auto;
+    left: auto;
+    margin-top: 24px;
+  }
+
+  /* BACKGROUND BLOCKS: stretch full width, but don't control content layout */
+  .hackathon .rectangle-2,
+  .hackathon .rectangle-3,
+  .hackathon .rectangle-4 {
+    position: relative;
+    left: 0;
+    width: 100%;
+    height: auto;
+  }
+
+  /* MAIN CONTENT BLOCKS – make them stack and fit width */
+  .hackathon .frame-4,
+  .hackathon .frame-6,
+  .hackathon .frame-23,
+  .hackathon .frame-24,
+  .hackathon .frame-25,
+  .hackathon .frame-26,
+  .hackathon .frame-29,
+  .hackathon .frame-31,
+  .hackathon .frame-33,
+  .hackathon .frame-38,
+  .hackathon .frame-42,
+  .hackathon .frame-49 {
+    position: relative;
+    top: auto;
+    left: 0;
+    width: 100%;
+    max-width: 100%;
+    margin: 24px auto 0;
+    padding-left: 16px;
+    padding-right: 16px;
+    box-sizing: border-box;
+  }
+
+  /* 2-column sections -> single column */
+  .hackathon .frame-6,
+  .hackathon .frame-26,
+  .hackathon .frame-29,
+  .hackathon .frame-33,
+  .hackathon .frame-38 .frame-39 {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* Make cards full-width on small screens */
+  .hackathon .frame-7,
+  .hackathon .frame-12,
+  .hackathon .frame-27,
+  .hackathon .frame-30,
+  .hackathon .frame-37,
+  .hackathon .frame-40 {
+    width: 100%;
+  }
+
+  /* Large headings scale down a bit */
+  .hackathon .text-wrapper-4,
+  .hackathon .text-wrapper-11,
+  .hackathon .text-wrapper-18 {
+    font-size: 28px;
+  }
+
+  .hackathon .text-wrapper-3,
+  .hackathon .text-wrapper-5,
+  .hackathon .text-wrapper-10,
+  .hackathon .text-wrapper-20 {
+    font-size: 16px;
+  }
+
+  /* TIMELINE SECTION: let boxes stack, remove complex absolute layout */
+  .hackathon .group-4 {
+    position: relative;
+    top: auto;
+    left: 0;
+    width: 100%;
+    height: auto;
+    margin-top: 24px;
+  }
+
+  .hackathon .frame-14,
+  .hackathon .frame-20,
+  .hackathon .frame-21,
+  .hackathon .frame-22 {
+    position: relative;
+    top: auto;
+    left: 0;
+    width: 100%;
+    margin: 16px 0;
+  }
+
+  .hackathon .line,
+  .hackathon .fi-2,
+  .hackathon .fi-3,
+  .hackathon .fi-wrapper,
+  .hackathon .fi-5 {
+    display: none; /* hide vertical line + markers on mobile for simplicity */
+  }
+
+  /* DEADLINE + SUBMISSION BLOCKS */
+  .hackathon .frame-38 {
+    margin-top: 32px;
+  }
+
+  .hackathon .frame-39 {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* REGISTRATION & CONTACT SECTIONS */
+  .hackathon .frame-42,
+  .hackathon .frame-49 {
+    padding: 16px;
+  }
+
+  .hackathon .frame-43,
+  .hackathon .frame-50,
+  .hackathon .frame-52 {
+    width: 100%;
+  }
+
+  /* FOOTER – keep full width and readable */
+  .hackathon .rectangle-5 {
+    position: relative;
+    top: auto;
+    left: 0;
+    width: 100%;
+    height: auto;
+    padding: 16px 0;
+  }
+
+  .hackathon .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 0 16px;
+  }
+
+  .hackathon .text-wrapper-33,
+  .hackathon .text-wrapper-34 {
+    white-space: normal;
+  }
+
+  .hackathon .footer-social {
+    display: flex;
+    gap: 12px;
+  }
+
+  /* Ensure images scale nicely */
+  .hackathon img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Extra-tight layout for narrow phones */
+@media (max-width: 600px) {
+  .hackathon .frame-2 {
+    padding-top: 72px;
+  }
+
+  .hackathon .text-wrapper-4,
+  .hackathon .text-wrapper-11,
+  .hackathon .text-wrapper-18 {
+    font-size: 24px;
+  }
+
+  .hackathon .text-wrapper-5,
+  .hackathon .text-wrapper-20,
+  .hackathon .text-wrapper-23 {
+    font-size: 15px;
+  }
+
+  .hackathon .frame-3 {
+    width: 100%;
+    justify-content: center;
+  }
+}
