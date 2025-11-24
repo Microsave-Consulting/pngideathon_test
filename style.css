@@ -1,14 +1,3 @@
-html, body {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  -webkit-text-size-adjust: 100%; /* avoids weird font auto-zooming on iOS */
-  overflow-x: auto;              /* allows sideways scroll if anything overflows */
-  /* or overflow-x: hidden; if you prefer to hide any stray overflow */
-}
-
 .hackathon {
   background-color: #ffffff;
   width: 100%;
@@ -1666,18 +1655,12 @@ body {
   padding: 0 24px;
 }
 
-@media (max-width: 768px) {
-
-  html, body {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;   /* prevent sideways scroll */
-  }
-
+@media (max-width: 1440px) {
   .hackathon {
-    transform: scale(0.33);   /* adjust this value if needed */
-    transform-origin: top left;
-    width: 1440px;            /* keep original design width */
-    min-width: unset !important;  /* override the min-width:1440px */
+    min-width: unset !important;
   }
+}
+
+body, html {
+  overflow-x: auto;   /* or scroll */
 }
