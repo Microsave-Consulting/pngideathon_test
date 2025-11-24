@@ -1655,52 +1655,55 @@
   padding: 0 24px;
 }
 
-/* ===== Global: prevent horizontal scrolling ===== */
-html, body {
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-.hackathon {
-  min-width: 0;
-}
-
-/* ===== Mobile & small tablets ===== */
 @media (max-width: 768px) {
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
 
   .hackathon {
+    min-width: 0;
     min-height: auto;
   }
 
-  .hackathon * {
+  /* Hide decorative background rectangles on mobile */
+  .hackathon .rectangle-2,
+  .hackathon .rectangle-3,
+  .hackathon .rectangle-4,
+  .hackathon .rectangle-5,
+  .hackathon .rectangle-6 {
+    display: none;
+  }
+
+  /* NAV BAR: full width, non-absolute */
+  .hackathon .nav-bar {
+    position: relative;
+    width: 100%;
+    left: 0;
+    right: 0;
+    padding: 12px 16px;
     box-sizing: border-box;
   }
 
-  /* Allow all text to wrap, so no tiny scrollbars on lines */
-  .hackathon [class*="text-wrapper"] {
-    white-space: normal;
-  }
-
-  /* ---------- HERO SECTION ---------- */
-
+  /* HERO SECTION: turn into normal block */
   .hackathon .frame-2 {
     position: relative;
-    top: 72px;          /* still under the nav bar */
-    left: 0;
+    top: auto;
+    left: auto;
     width: 100%;
     height: auto;
+    margin-top: 56px;
+    background-color: #303b6e;
   }
 
   .hackathon .overlap-group {
     position: relative;
-    min-width: 0;
-    width: 100%;
     height: auto;
-    padding: 32px 16px 40px;
-    align-items: flex-start;
-    justify-content: flex-start;
-    background-size: cover;
-    background-position: center;
+    padding: 24px 16px 16px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .hackathon .group {
@@ -1709,127 +1712,150 @@ html, body {
   }
 
   .hackathon .group-2 {
-    position: static;
-    width: 100%;
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 70%;
+    max-width: 320px;
     height: auto;
-    margin-bottom: 16px;
-  }
-
-  .hackathon .p {
-    position: static;
-    width: 100%;
-    font-size: 18px;
-    line-height: 1.4;
-    margin: 12px 0 20px;
+    margin: 16px auto 0;
+    display: block;
   }
 
   .hackathon .frame-3 {
-    position: static;
-    margin-top: 8px;
-  }
-
-  /* ---------- SECTION BELOW HERO ---------- */
-
-  .hackathon .rectangle-2 {
     position: relative;
     top: auto;
-    left: 0;
-    width: 100%;
-    height: auto;
-    padding-bottom: 32px;
+    left: auto;
+    margin: 24px auto 0;
   }
 
+  .hackathon .p {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    margin: 16px auto 24px;
+    padding: 0 16px 16px;
+    box-sizing: border-box;
+  }
+
+  /* MAIN SECTIONS: stack vertically, full width */
   .hackathon .frame-4,
-  .hackathon .frame-6 {
-    position: relative;
-    top: auto;
-    left: 0;
-    width: 100%;
-    padding: 24px 16px;
-  }
-
-  .hackathon .frame-6 {
-    flex-direction: column;   /* cards stack vertically */
-  }
-
-  /* ---------- "THE IDEATHON JOURNEY" + TIMELINE ---------- */
-
-  .hackathon .text-wrapper-11 {
-    position: relative;
-    top: auto;
-    left: auto;
-    width: 100%;
-    padding: 0 16px;
-    margin: 40px 0 16px;
-    font-size: 28px;
-    text-align: left;
-  }
-
-  .hackathon .group-4 {
-    position: relative;
-    top: auto;
-    left: auto;
-    width: 100%;
-    height: auto;
-    margin: 0;
-    padding: 0 16px 40px;
-  }
-
-  .hackathon .frame-14 {
-    position: relative;
-    top: auto;
-    left: auto;
-    width: 100%;
-    padding: 20px 16px;
-  }
-
-  /* hide the tall vertical line + circle icons on small screens */
-  .hackathon .line,
-  .hackathon .fi-2,
-  .hackathon .fi-3,
-  .hackathon .fi-5,
-  .hackathon .fi-wrapper {
-    display: none;
-  }
-
-  /* ---------- LATER LARGE BACKGROUND BLOCKS ---------- */
-
-  .hackathon .rectangle-3,
-  .hackathon .rectangle-4 {
-    position: relative;
-    top: auto;
-    left: 0;
-    width: 100%;
-    height: auto;
-  }
-
+  .hackathon .frame-6,
+  .hackathon .text-wrapper-11,
+  .hackathon .group-4,
   .hackathon .frame-23,
   .hackathon .frame-24,
   .hackathon .frame-25,
-  .hackathon .frame-42 {
-    position: relative;
-    top: auto;
-    left: 0;
-    width: 100%;
-    padding: 32px 16px;
+  .hackathon .frame-26,
+  .hackathon .frame-29,
+  .hackathon .frame-31,
+  .hackathon .frame-33,
+  .hackathon .frame-38,
+  .hackathon .frame-42,
+  .hackathon .frame-49 {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    width: 100% !important;
+    max-width: 100%;
+    margin: 24px auto 0 !important;
+    padding-left: 16px;
+    padding-right: 16px;
+    box-sizing: border-box;
   }
 
-  /* ---------- FOOTER: REMOVE HUGE BOTTOM GAP ---------- */
-
-  .hackathon .rectangle-5 {
-    position: relative;
-    top: auto;
-    left: 0;
-    width: 100%;
-    height: auto;
-    padding: 24px 16px;
-    margin-top: 40px;
+  /* 2-column areas → single-column */
+  .hackathon .frame-6,
+  .hackathon .frame-26,
+  .hackathon .frame-29,
+  .hackathon .frame-33,
+  .hackathon .frame-39 {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
   }
 
+  .hackathon .text-wrapper-11 {
+    margin-top: 40px !important;
+    padding-left: 16px;
+    padding-right: 16px;
+    text-align: left;
+  }
+
+  /* TIMELINE: stack Stage 1–4 cards */
+  .hackathon .group-4 {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .hackathon .frame-14,
+  .hackathon .frame-20,
+  .hackathon .frame-21,
+  .hackathon .frame-22 {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  /* Hide vertical line & dots in the timeline */
+  .hackathon .line,
+  .hackathon .fi-2,
+  .hackathon .fi-3,
+  .hackathon .fi-wrapper,
+  .hackathon .fi-5 {
+    display: none !important;
+  }
+
+  /* Let all long text wrap (no tiny scrollbars) */
+  .hackathon [class^="text-wrapper"],
+  .hackathon .element-november,
+  .hackathon .element-november-to,
+  .hackathon .digital-ID,
+  .hackathon .div-2,
+  .hackathon .https-www-linkedin,
+  .hackathon .pngdigitalid {
+    white-space: normal !important;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* Benefit & eligibility cards full width */
+  .hackathon .frame-27,
+  .hackathon .frame-30,
+  .hackathon .frame-37,
+  .hackathon .frame-40 {
+    width: 100%;
+  }
+
+  /* Deadlines row stacked */
+  .hackathon .frame-39 {
+    flex-direction: column;
+  }
+
+  /* Registration & contact spacing */
+  .hackathon .frame-42,
+  .hackathon .frame-49 {
+    padding-bottom: 24px;
+  }
+
+  /* Footer (background rectangles hidden) */
   .hackathon .footer-inner {
+    max-width: 100%;
+    padding: 24px 16px;
+    box-sizing: border-box;
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
-    padding: 0;
+  }
+
+  /* Images never overflow horizontally */
+  .hackathon img {
+    max-width: 100%;
+    height: auto;
   }
 }
