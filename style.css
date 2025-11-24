@@ -1654,13 +1654,3 @@
   align-items: center;
   padding: 0 24px;
 }
-
-@media (max-width: 1440px) {
-  .hackathon {
-    min-width: unset !important;
-  }
-}
-
-body, html {
-  overflow-x: auto;   /* or scroll */
-}
