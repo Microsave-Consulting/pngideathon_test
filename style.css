@@ -1963,3 +1963,76 @@ body {
     justify-content: center;
   }
 }
+
+/* ================================
+   Fix overflowing text on mobile
+   (timeline + recognition + footer)
+   ================================ */
+@media (max-width: 768px) {
+
+  /* --- "The Ideathon Journey" timeline cards --- */
+
+  /* Make the title use the full screen width */
+  .hackathon .text-wrapper-11 {
+    width: 100%;
+    left: 0;
+    padding: 0 16px;
+    box-sizing: border-box;
+  }
+
+  /* Let the timeline container and cards fit the viewport */
+  .hackathon .group-4 {
+    width: 100%;
+    left: 0;
+    padding: 0 16px 24px;
+    box-sizing: border-box;
+  }
+
+  .hackathon .frame-14,
+  .hackathon .frame-20,
+  .hackathon .frame-21,
+  .hackathon .frame-22 {
+    width: 100%;
+    left: 0;
+  }
+
+  /* Allow long headings and dates to wrap instead of overflowing */
+  .hackathon .text-wrapper-14,
+  .hackathon .element-november-to,
+  .hackathon .element-november {
+    white-space: normal;
+  }
+
+  /* --- "Recognition" card --- */
+
+  .hackathon .frame-31 {
+    width: 100%;
+    left: 0;
+    padding-left: 16px;
+    padding-right: 16px;
+    box-sizing: border-box;
+  }
+
+  .hackathon .text-wrapper-21 {
+    white-space: normal;
+  }
+
+  /* --- Bottom "Questions? / Stay Connected" block --- */
+
+  .hackathon .frame-49 {
+    width: 100%;
+    left: 0;
+    padding-left: 16px;
+    padding-right: 16px;
+    box-sizing: border-box;
+  }
+
+  /* URLs and hashtags: allow breaking inside long strings */
+  .hackathon .https-www-linkedin {
+    word-break: break-all;
+  }
+
+  .hackathon .pngdigitalid {
+    overflow-wrap: anywhere;
+  }
+}
