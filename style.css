@@ -1655,25 +1655,19 @@
   padding: 0 24px;
 }
 
-@media (max-width: 1440px) {
-  .hackathon {
-    min-width: unset !important;
-  }
-}
-
-body, html {
-  overflow-x: auto;   /* or scroll */
-}
-
-
-
 /* =========================================
    RESPONSIVE OVERRIDES (TABLET + MOBILE)
    ========================================= */
 @media (max-width: 1024px) {
+  /* Avoid horizontal scroll */
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
   .hackathon {
-    min-width: 0;              /* remove 1440px lock */
-    min-height: auto;          /* let height grow with content */
+    min-width: 0;
+    min-height: auto;
     width: 100%;
     position: relative;
     overflow-x: hidden;
@@ -1688,7 +1682,7 @@ body, html {
     box-sizing: border-box;
   }
 
-  /* HERO SECTION (keeps left-side image, but scales to screen) */
+  /* HERO SECTION */
   .hackathon .frame-2 {
     position: relative;
     top: 0;
@@ -1697,7 +1691,7 @@ body, html {
     height: auto;
     padding: 80px 16px 32px;
     box-sizing: border-box;
-    background-color: #303b6e;
+    background-color: #303b6e; /* keep your original blue band */
   }
 
   .hackathon .overlap-group {
@@ -1725,7 +1719,8 @@ body, html {
     height: auto;
     top: auto;
     left: auto;
-    margin: 16px 0;
+    margin: 16px auto 0;
+    display: block;
   }
 
   .hackathon .p {
@@ -1745,17 +1740,18 @@ body, html {
     margin-top: 24px;
   }
 
-  /* BACKGROUND BLOCKS: stretch full width, but don't control content layout */
+  /* BACKGROUND BLOCKS – make them fluid */
   .hackathon .rectangle-2,
   .hackathon .rectangle-3,
-  .hackathon .rectangle-4 {
+  .hackathon .rectangle-4,
+  .hackathon .rectangle-5 {
     position: relative;
     left: 0;
     width: 100%;
     height: auto;
   }
 
-  /* MAIN CONTENT BLOCKS – make them stack and fit width */
+  /* MAIN CONTENT BLOCKS – stack & stretch */
   .hackathon .frame-4,
   .hackathon .frame-6,
   .hackathon .frame-23,
@@ -1784,12 +1780,12 @@ body, html {
   .hackathon .frame-26,
   .hackathon .frame-29,
   .hackathon .frame-33,
-  .hackathon .frame-38 .frame-39 {
+  .hackathon .frame-39 {
     flex-direction: column;
     gap: 16px;
   }
 
-  /* Make cards full-width on small screens */
+  /* Make cards full-width */
   .hackathon .frame-7,
   .hackathon .frame-12,
   .hackathon .frame-27,
@@ -1799,7 +1795,7 @@ body, html {
     width: 100%;
   }
 
-  /* Large headings scale down a bit */
+  /* Headings scale down */
   .hackathon .text-wrapper-4,
   .hackathon .text-wrapper-11,
   .hackathon .text-wrapper-18 {
@@ -1813,36 +1809,63 @@ body, html {
     font-size: 16px;
   }
 
-  /* TIMELINE SECTION: let boxes stack, remove complex absolute layout */
+  /* ================================
+     TIMELINE ("The Ideathon Journey")
+     ================================ */
+
+  /* Prevent heading overlap */
+  .hackathon .text-wrapper-11 {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100%;
+    margin: 40px 0 16px;
+    text-align: center;
+  }
+
+  /* Let the timeline container flow as a vertical stack */
   .hackathon .group-4 {
     position: relative;
     top: auto;
-    left: 0;
+    left: auto;
     width: 100%;
     height: auto;
-    margin-top: 24px;
+    margin: 0 auto 24px;
+    padding: 0 16px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
   }
 
+  /* Each stage card (Stage 1–4) becomes a full-width card */
   .hackathon .frame-14,
   .hackathon .frame-20,
   .hackathon .frame-21,
   .hackathon .frame-22 {
     position: relative;
     top: auto;
-    left: 0;
+    left: auto;
     width: 100%;
-    margin: 16px 0;
+    max-width: 100%;
+    margin: 0 0 16px;
+    padding: 16px;
+    box-sizing: border-box;
   }
 
+  /* Hide decorative vertical line & icons – keep only cards */
   .hackathon .line,
   .hackathon .fi-2,
   .hackathon .fi-3,
   .hackathon .fi-wrapper,
   .hackathon .fi-5 {
-    display: none; /* hide vertical line + markers on mobile for simplicity */
+    display: none;
   }
 
-  /* DEADLINE + SUBMISSION BLOCKS */
+  /* ================================
+     DEADLINES / DATES STRIP
+     ================================ */
+
   .hackathon .frame-38 {
     margin-top: 32px;
   }
@@ -1852,7 +1875,10 @@ body, html {
     gap: 16px;
   }
 
-  /* REGISTRATION & CONTACT SECTIONS */
+  /* ================================
+     REGISTRATION & CONTACT BLOCKS
+     ================================ */
+
   .hackathon .frame-42,
   .hackathon .frame-49 {
     padding: 16px;
@@ -1864,21 +1890,16 @@ body, html {
     width: 100%;
   }
 
-  /* FOOTER – keep full width and readable */
-  .hackathon .rectangle-5 {
-    position: relative;
-    top: auto;
-    left: 0;
-    width: 100%;
-    height: auto;
-    padding: 16px 0;
-  }
+  /* ================================
+     FOOTER
+     ================================ */
 
   .hackathon .footer-inner {
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
-    padding: 0 16px;
+    padding: 16px;
+    max-width: 100%;
   }
 
   .hackathon .text-wrapper-33,
@@ -1891,7 +1912,7 @@ body, html {
     gap: 12px;
   }
 
-  /* Ensure images scale nicely */
+  /* All images responsive */
   .hackathon img {
     max-width: 100%;
     height: auto;
