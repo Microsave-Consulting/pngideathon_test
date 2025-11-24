@@ -1667,16 +1667,17 @@ body {
 }
 
 @media (max-width: 768px) {
+
   html, body {
     margin: 0;
     padding: 0;
-    overflow-x: hidden;          /* prevent sideways scrollbars */
+    overflow-x: hidden;   /* prevent sideways scroll */
   }
 
   .hackathon {
-    transform: scale(0.35);      /* tweak this factor until it feels right */
+    transform: scale(0.33);   /* adjust this value if needed */
     transform-origin: top left;
-    width: 1440px;               /* keep your original design width */
-    min-width: 0;                /* override the min-width: 1440px */
+    width: 1440px;            /* keep original design width */
+    min-width: unset !important;  /* override the min-width:1440px */
   }
 }
