@@ -2168,3 +2168,13 @@ body {
     overflow-wrap: break-word !important;
   }
 }
+
+.hackathon .frame-41 a,
+.hackathon .frame-41 p,
+.hackathon .div-2 {
+  display: block !important;
+  width: 100% !important;
+  white-space: normal !important;
+  overflow-wrap: break-word !important;
+  word-break: break-word !important;
+}
