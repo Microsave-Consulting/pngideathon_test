@@ -1666,9 +1666,11 @@
 /* ===================================================
    GLOBAL: avoid horizontal scroll on small screens
    =================================================== */
-html,
-body {
-  overflow-x: hidden;
+@media (max-width: 1024px){
+    html,
+    body {
+    overflow-x: hidden;
+    }
 }
 
 /* ===================================================
@@ -2178,8 +2180,6 @@ body {
   overflow-wrap: break-word !important;
   word-break: break-word !important;
 }
-
-
 
 @media (max-width: 768px) {
   .hackathon .text-wrapper-27 {
