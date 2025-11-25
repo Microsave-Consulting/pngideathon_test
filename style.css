@@ -2094,3 +2094,77 @@ body {
   }
 }
 
+/* FINAL MOBILE PATCH – Team Composition + Eligible Participants */
+@media (max-width: 768px) {
+
+  /* row that holds both cards */
+  .hackathon .frame-33 {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 16px !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+  }
+
+  /* EACH CARD inside that row:
+     - .frame-27 is "Who can participate"
+     - .frame-34 is "Team Composition"
+     - .frame-37 is "Eligible Participants"
+  */
+  .hackathon .frame-27,
+  .hackathon .frame-34,
+  .hackathon .frame-37 {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* bullet rows: icon + text should wrap nicely */
+  .hackathon .frame-33 .frame-9 {
+    flex-wrap: wrap !important;
+    align-items: flex-start !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .hackathon .frame-33 .frame-36 {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+  }
+
+  .hackathon .frame-33 .text-wrapper-15 {
+    white-space: normal !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+}
+
+/* FINAL MOBILE PATCH – Final Use Case Idea Submission Link card */
+@media (max-width: 768px) {
+
+  /* row holding the deadline cards */
+  .hackathon .frame-38,
+  .hackathon .frame-39 {
+    left: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 16px 24px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* each deadline card, including the Final Use Case link */
+  .hackathon .frame-40 {
+    position: relative !important;
+    left: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* title + date text should wrap */
+  .hackathon .frame-40 .text-wrapper-23,
+  .hackathon .frame-40 .div-2 {
+    white-space: normal !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+}
