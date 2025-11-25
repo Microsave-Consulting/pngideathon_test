@@ -1654,22 +1654,20 @@
   align-items: center;
   padding: 0 24px;
 }
-
 /* ===================================================
-   MOBILE / TABLET LAYOUT
+   RESPONSIVE LAYOUT — TABLET & MOBILE
    =================================================== */
 @media (max-width: 1024px) {
 
-  /* Page should never scroll sideways */
-  html,
-  body {
-    max-width: 100%;
+  /* Avoid sideways scrolling globally */
+  html, body {
     overflow-x: hidden;
+    max-width: 100%;
   }
 
   .hackathon {
-    width: 100%;
     min-width: 0;
+    width: 100%;
     min-height: auto;
     position: relative;
   }
@@ -1684,29 +1682,28 @@
     box-sizing: border-box;
   }
 
-  /* ---------- HERO SECTION ---------- */
+  /* ---------- HERO ---------- */
   .hackathon .frame-2 {
     position: relative;
-    top: 0;
-    left: 0;
     width: 100%;
     height: auto;
-    background-color: #303b6e;
+    top: 0;
+    left: 0;
+    padding-bottom: 24px;
+    box-sizing: border-box;
   }
 
   .hackathon .overlap-group {
     position: relative;
     width: 100%;
     min-width: 0;
+    padding: 72px 16px 32px;
     height: auto;
-    padding: 72px 16px 40px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
     background-size: cover;
     background-position: center;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
   }
 
   .hackathon .group {
@@ -1718,24 +1715,19 @@
   .hackathon .group-2 {
     position: relative;
     width: 70%;
-    max-width: 320px;
     height: auto;
-    margin: 16px auto 0;
+    margin-top: 20px;
   }
 
   .hackathon .p {
     position: relative;
-    top: auto;
-    left: auto;
     width: 100%;
-    margin-top: 16px;
     font-size: 20px;
+    margin-top: 12px;
   }
 
   .hackathon .frame-3 {
     position: relative;
-    top: auto;
-    left: auto;
     margin-top: 24px;
   }
 
@@ -1751,7 +1743,7 @@
     height: auto;
   }
 
-  /* ---------- GENERIC CONTENT BLOCKS ---------- */
+  /* ---------- CONTENT FRAMES (General) ---------- */
   .hackathon .frame-4,
   .hackathon .frame-6,
   .hackathon .frame-23,
@@ -1781,67 +1773,61 @@
   .hackathon .frame-33,
   .hackathon .frame-39 {
     flex-direction: column;
-    align-items: stretch;
     gap: 16px;
+    align-items: stretch;
   }
 
-  /* cards themselves full-width */
+  /* full width cards */
   .hackathon .frame-7,
   .hackathon .frame-12,
   .hackathon .frame-27,
   .hackathon .frame-30,
   .hackathon .frame-37,
-  .hackathon .frame-40 {
-    width: 100%;
-  }
-
+  .hackathon .frame-40,
   .hackathon .frame-43,
   .hackathon .frame-50,
   .hackathon .frame-52 {
     width: 100%;
   }
 
-  /* ---------- "THE IDEATHON JOURNEY" TIMELINE ---------- */
+
+  /* ===================================================
+     THE IDEATHON JOURNEY (TIMELINE)
+     =================================================== */
 
   .hackathon .text-wrapper-11 {
     position: relative;
     top: auto;
     left: auto;
     width: 100%;
-    margin: 40px 0 16px;
     padding: 0 16px;
+    margin: 32px 0 16px;
     box-sizing: border-box;
-    text-align: left;
     font-size: 28px;
   }
 
   .hackathon .group-4 {
     position: relative;
-    top: auto;
-    left: auto;
     width: 100%;
-    height: auto;
-    margin: 0 auto 24px;
-    padding: 0 16px 24px;
+    padding: 0 16px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     gap: 16px;
   }
 
+  /* Timeline cards full width */
   .hackathon .frame-14,
   .hackathon .frame-20,
   .hackathon .frame-21,
   .hackathon .frame-22 {
     position: relative;
-    top: auto;
-    left: auto;
     width: 100%;
     max-width: 100%;
     margin: 0;
   }
 
-  /* hide decorative vertical line + dots */
+  /* Remove vertical line & timeline icons */
   .hackathon .line,
   .hackathon .fi-2,
   .hackathon .fi-3,
@@ -1850,86 +1836,90 @@
     display: none;
   }
 
-  /* let stage headings + dates wrap */
+  /* Force timeline text to wrap */
   .hackathon .text-wrapper-14,
   .hackathon .element-november-to,
   .hackathon .element-november {
     white-space: normal;
   }
 
-  /* ---------- RECOGNITION / TEAM / ELIGIBILITY ---------- */
 
-  /* Recognition card */
-  .hackathon .frame-31 {
-    position: relative;
+  /* ===================================================
+     *** FINAL FIX: TEAM COMPOSITION + ELIGIBLE PARTICIPANTS ***
+     =================================================== */
+
+  /* BULLET ROW — root cause of overflow */
+  .hackathon .frame-9 {
+    display: flex;
+    flex-wrap: wrap !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    align-items: flex-start !important;
   }
 
-  .hackathon .text-wrapper-21,
-  .hackathon .text-wrapper-22 {
-    white-space: normal;
+  /* text container inside bullet row */
+  .hackathon .frame-36 {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;   /* ★ prevents flex overflow */
   }
 
-  /* Team Composition + Eligible Participants container */
-  .hackathon .frame-33 {
-    position: relative;
+  /* bullet icons should not shrink */
+  .hackathon .img-2 {
+    flex-shrink: 0 !important;
   }
 
-  /* ---------- DEADLINES STRIP ---------- */
-
-  .hackathon .frame-38 {
-    margin-top: 32px;
+  /* wrap bullet text */
+  .hackathon .text-wrapper-15 {
+    white-space: normal !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
   }
 
-  .hackathon .frame-39 {
-    flex-direction: column;
-    gap: 16px;
+  /* titles: Team Composition / Eligible Participants */
+  .hackathon .text-wrapper-14 {
+    white-space: normal !important;
   }
 
-  /* Allow date line to wrap */
+
+  /* ===================================================
+     DEADLINES / REGISTRATION / CONTACT
+     =================================================== */
+
   .hackathon .text-wrapper-27 {
-    white-space: normal;
+    white-space: normal !important;
   }
 
-  /* ---------- REGISTRATION + QUESTIONS / STAY CONNECTED ---------- */
-
-  .hackathon .frame-42,
-  .hackathon .frame-49 {
-    position: relative;
-  }
-
-  /* LinkedIn URLs + hashtags should break */
   .hackathon .https-www-linkedin {
-    white-space: normal;
-    word-break: break-all;
+    word-break: break-all !important;
+    white-space: normal !important;
   }
 
   .hackathon .pngdigitalid {
-    white-space: normal;
-    overflow-wrap: anywhere;
+    overflow-wrap: anywhere !important;
+    white-space: normal !important;
   }
 
-  /* ---------- FOOTER ---------- */
+
+  /* ===================================================
+     FOOTER
+     =================================================== */
 
   .hackathon .rectangle-5 {
     position: relative;
-    top: auto;
-    left: 0;
     width: 100%;
     height: auto;
-    margin-top: 32px;
     padding: 16px 0;
     background-color: #303b6e;
+    margin-top: 32px;
   }
 
   .hackathon .footer-inner {
-    max-width: 100%;
-    height: auto;
-    margin: 0 auto;
-    padding: 0 16px;
-    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    padding: 0 16px;
+    box-sizing: border-box;
+    width: 100%;
     gap: 8px;
   }
 
@@ -1938,44 +1928,21 @@
     white-space: normal;
   }
 
-  .hackathon .frame-56 {
-    display: flex;
-    gap: 12px;
-  }
-
-  /* ---------- GENERAL TEXT / IMAGES ---------- */
-
-  /* make sure no text insists on one line */
-  .hackathon [class^="text-wrapper"] {
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-  }
-
-  .hackathon img {
+  /* make all images responsive */
+  img {
     max-width: 100%;
     height: auto;
   }
-.hackathon .text-wrapper-7,
-.hackathon .text-wrapper-8,
-.hackathon .text-wrapper-9,
-.hackathon .text-wrapper-14,
-.hackathon .text-wrapper-15,
-.hackathon .text-wrapper-20,
-.hackathon .text-wrapper-27,
-.hackathon .text-wrapper-28,
-.hackathon .text-wrapper-29,
-.hackathon .https-www-linkedin {
-    white-space: normal !important;
-    overflow-wrap: break-word !important;
-    word-break: break-word !important;
-}  
 }
 
-/* Extra tweaks for very small phones */
+
+/* ===================================================
+   SMALL PHONES (extra polish)
+   =================================================== */
 @media (max-width: 600px) {
 
-  .hackathon .text-wrapper-4,
   .hackathon .text-wrapper-11,
+  .hackathon .text-wrapper-4,
   .hackathon .text-wrapper-18 {
     font-size: 24px;
   }
