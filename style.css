@@ -2076,3 +2076,28 @@ body {
     overflow-wrap: anywhere;
   }
 }
+
+/* =========================================
+   Final micro-fix: Team Composition block
+   (and extra safety on the other two)
+   ========================================= */
+@media (max-width: 768px) {
+
+  /* Team Composition + Eligible Participants wrapper */
+  .hackathon .frame-33 {
+    position: relative !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    overflow-x: hidden;
+  }
+
+  /* Extra safety: prevent any horizontal overflow
+     inside the three big cards on mobile */
+  .hackathon .frame-31,
+  .hackathon .frame-33,
+  .hackathon .frame-49 {
+    overflow-x: hidden;
+  }
+}
