@@ -1988,6 +1988,26 @@ body {
   .hackathon .text-wrapper-14 {
     white-space: normal !important;
   }
+  /* Kill tiny horizontal overflow in the “troublemaker” sections on mobile */
+
+  /* Team Composition + Eligible Participants container */
+  .hackathon .frame-33 {
+    overflow-x: hidden;
+  }
+
+  /* Final Use Case Idea Submission + other deadline cards container */
+  .hackathon .frame-38 {
+    overflow-x: hidden;
+  }
+
+  /* The rows that hold icon + text should never exceed their parent width */
+  .hackathon .frame-9,
+  .hackathon .frame-40 {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+
 }
 
 /* ===================================================
