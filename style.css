@@ -2141,3 +2141,50 @@ body {
   }
 }
 
+/* =========================================
+   Very targeted mobile fixes for overflow
+   (Team Composition, Eligible Participants,
+    Final Use Case Link, LinkedIn URLs)
+   ========================================= */
+@media (max-width: 768px) {
+
+  /* Make sure the two cards row cannot be wider than the screen */
+  .hackathon .frame-33,
+  .hackathon .frame-27,
+  .hackathon .frame-37 {
+    max-width: 100% !important;
+  }
+
+  /* Bullet text in Team Composition + Eligible Participants */
+  .hackathon .frame-27 .text-wrapper-15,
+  .hackathon .frame-37 .text-wrapper-15 {
+    display: block !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  /* "Final Use Case Idea Submission Link" – long URL */
+  .hackathon .div-2,
+  .hackathon .text-wrapper-24 {
+    display: block !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  /* LinkedIn URLs in "Stay Connected" */
+  .hackathon .https-www-linkedin {
+    width: 100% !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  /* Hashtags block – just in case */
+  .hackathon .pngdigitalid {
+    white-space: normal !important;
+    word-break: break-word !important;
+    overflow-wrap: anywhere !important;
+  }
+}
