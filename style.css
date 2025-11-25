@@ -2121,5 +2121,23 @@ body {
     overflow-wrap: break-word;
     word-break: break-word;
   }
+    .hackathon .frame-9 {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hackathon .frame-36 {
+    width: 100%;
+  }
+
+  /* Final Use Case Idea Submission Link card row */
+  .hackathon .frame-40 {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hackathon .frame-41 {
+    width: 100%;
+  }
 }
 
