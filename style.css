@@ -2178,3 +2178,16 @@ body {
   overflow-wrap: break-word !important;
   word-break: break-word !important;
 }
+
+
+
+@media (max-width: 768px) {
+  .hackathon .text-wrapper-27 {
+    display: block;
+    width: 100%;
+    white-space: normal !important;
+    word-break: break-all;
+    overflow-wrap: anywhere;
+    text-decoration: underline; /* keep underline if you like it */
+  }
+}
