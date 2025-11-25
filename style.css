@@ -1955,6 +1955,20 @@
     max-width: 100%;
     height: auto;
   }
+.hackathon .text-wrapper-7,
+.hackathon .text-wrapper-8,
+.hackathon .text-wrapper-9,
+.hackathon .text-wrapper-14,
+.hackathon .text-wrapper-15,
+.hackathon .text-wrapper-20,
+.hackathon .text-wrapper-27,
+.hackathon .text-wrapper-28,
+.hackathon .text-wrapper-29,
+.hackathon .https-www-linkedin {
+    white-space: normal !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+}  
 }
 
 /* Extra tweaks for very small phones */
