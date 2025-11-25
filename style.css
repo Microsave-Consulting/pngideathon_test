@@ -340,13 +340,15 @@
 
 .hackathon .frame-9 {
   display: flex;
-  align-items: flex-start;   /* was center */
+  align-items: flex-start;
   gap: 12px;
   position: relative;
   align-self: stretch;
   width: 100%;
+  max-width: 100%;       /* NEW: never wider than its parent */
   flex: 0 0 auto;
-  flex-wrap: wrap;
+  flex-wrap: wrap;       /* let text wrap under the icon if needed */
+  box-sizing: border-box;
 }
 
 .hackathon .text-wrapper-7 {
@@ -1110,7 +1112,9 @@
   position: relative;
   flex: 1;
   flex-grow: 1;
-  min-width: 0;
+  min-width: 0;                      /* allow shrinking */
+  width: calc(100% - 36px);          /* 24px icon + 12px gap */
+  box-sizing: border-box;
 }
 
 .hackathon .frame-37 {
@@ -1169,6 +1173,8 @@
   border-radius: 12px;
   border: 1px solid;
   border-color: #e8e8e8;
+  max-width: 100%;               /* NEW: clamp to card width */
+  box-sizing: border-box;
 }
 
 .hackathon .fi-8 {
@@ -1191,8 +1197,10 @@
   align-items: flex-start;
   gap: 8px;
   position: relative;
-  flex: 1;
-  flex-grow: 1;
+  flex: 1 1 0;
+  min-width: 0;                  /* allow shrinking */
+  width: calc(100% - 40px);      /* 24px icon + 16px gap */
+  box-sizing: border-box;
 }
 
 .hackathon .text-wrapper-23 {
