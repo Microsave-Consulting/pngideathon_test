@@ -1654,56 +1654,61 @@
   align-items: center;
   padding: 0 24px;
 }
+
 /* ===================================================
-   RESPONSIVE LAYOUT — TABLET & MOBILE
+   GLOBAL: avoid horizontal scroll on small screens
+   =================================================== */
+html,
+body {
+  overflow-x: hidden;
+}
+
+/* ===================================================
+   TABLET + MOBILE LAYOUT  (up to iPad width)
    =================================================== */
 @media (max-width: 1024px) {
 
-  /* Avoid sideways scrolling globally */
-  html, body {
-    overflow-x: hidden;
-    max-width: 100%;
-  }
-
   .hackathon {
-    min-width: 0;
-    width: 100%;
+    min-width: 0;          /* remove 1440px lock */
     min-height: auto;
+    width: 100%;
     position: relative;
+    overflow-x: hidden;
   }
 
-  /* ---------- NAV BAR ---------- */
+  /* -------- NAV BAR -------- */
   .hackathon .nav-bar {
     position: relative;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 16px;
+    padding: 16px 16px;
     box-sizing: border-box;
   }
 
-  /* ---------- HERO ---------- */
+  /* -------- HERO SECTION -------- */
   .hackathon .frame-2 {
     position: relative;
-    width: 100%;
-    height: auto;
     top: 0;
     left: 0;
-    padding-bottom: 24px;
+    width: 100%;
+    height: auto;
+    padding: 80px 16px 32px;
     box-sizing: border-box;
+    background-color: #303b6e; /* your existing band colour */
   }
 
   .hackathon .overlap-group {
     position: relative;
     width: 100%;
     min-width: 0;
-    padding: 72px 16px 32px;
     height: auto;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-size: cover;
     background-position: center;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
   }
 
   .hackathon .group {
@@ -1716,34 +1721,41 @@
     position: relative;
     width: 70%;
     height: auto;
-    margin-top: 20px;
+    top: auto;
+    left: auto;
+    margin: 16px auto 0;
+    display: block;
   }
 
   .hackathon .p {
     position: relative;
+    top: auto;
+    left: auto;
     width: 100%;
+    margin-top: 16px;
     font-size: 20px;
-    margin-top: 12px;
+    padding-right: 0;
   }
 
   .hackathon .frame-3 {
     position: relative;
+    top: auto;
+    left: auto;
     margin-top: 24px;
   }
 
-  /* ---------- SECTION BACKGROUNDS ---------- */
+  /* -------- BACKGROUND RECTANGLES (just become bands) -------- */
   .hackathon .rectangle-2,
   .hackathon .rectangle-3,
   .hackathon .rectangle-4,
   .hackathon .rectangle-5 {
     position: relative;
-    top: auto;
     left: 0;
     width: 100%;
     height: auto;
   }
 
-  /* ---------- CONTENT FRAMES (General) ---------- */
+  /* -------- GENERIC CONTENT FRAMES -------- */
   .hackathon .frame-4,
   .hackathon .frame-6,
   .hackathon .frame-23,
@@ -1762,53 +1774,84 @@
     width: 100%;
     max-width: 100%;
     margin: 24px auto 0;
-    padding: 24px 16px;
+    padding-left: 16px;
+    padding-right: 16px;
     box-sizing: border-box;
   }
 
-  /* multi-column → single column */
+  /* 2-column sections → single column */
   .hackathon .frame-6,
   .hackathon .frame-26,
   .hackathon .frame-29,
   .hackathon .frame-33,
   .hackathon .frame-39 {
     flex-direction: column;
-    gap: 16px;
     align-items: stretch;
+    gap: 16px;
   }
 
-  /* full width cards */
+  /* Cards go full width */
   .hackathon .frame-7,
   .hackathon .frame-12,
   .hackathon .frame-27,
   .hackathon .frame-30,
   .hackathon .frame-37,
   .hackathon .frame-40,
+  .hackathon .frame-42,
+  .hackathon .frame-49 {
+    width: 100%;
+  }
+
   .hackathon .frame-43,
   .hackathon .frame-50,
   .hackathon .frame-52 {
     width: 100%;
   }
 
-
-  /* ===================================================
-     THE IDEATHON JOURNEY (TIMELINE)
-     =================================================== */
-
-  .hackathon .text-wrapper-11 {
-    position: relative;
-    top: auto;
-    left: auto;
-    width: 100%;
-    padding: 0 16px;
-    margin: 32px 0 16px;
-    box-sizing: border-box;
+  /* Headings a bit smaller on mobile */
+  .hackathon .text-wrapper-4,
+  .hackathon .text-wrapper-11,
+  .hackathon .text-wrapper-18 {
     font-size: 28px;
+  }
+
+  .hackathon .text-wrapper-3,
+  .hackathon .text-wrapper-5,
+  .hackathon .text-wrapper-10,
+  .hackathon .text-wrapper-20 {
+    font-size: 16px;
+  }
+
+  /* -------- FIX: long text lines with their own scrollbar -------- */
+  .hackathon [class^="text-wrapper"],
+  .hackathon .https-www-linkedin,
+  .hackathon .pngdigitalid {
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* ========================================
+     "THE IDEATHON JOURNEY" + TIMELINE
+     ======================================== */
+
+  /* fix title overlapping */
+  .hackathon .text-wrapper-11 {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100%;
+    margin: 40px 0 16px;
+    text-align: center;
   }
 
   .hackathon .group-4 {
     position: relative;
+    top: auto;
+    left: auto;
     width: 100%;
+    height: auto;
+    margin: 0 auto 24px;
     padding: 0 16px;
     box-sizing: border-box;
     display: flex;
@@ -1816,18 +1859,20 @@
     gap: 16px;
   }
 
-  /* Timeline cards full width */
+  /* each stage card full width, stacked */
   .hackathon .frame-14,
   .hackathon .frame-20,
   .hackathon .frame-21,
   .hackathon .frame-22 {
     position: relative;
+    top: auto;
+    left: auto;
     width: 100%;
     max-width: 100%;
-    margin: 0;
+    margin: 0 0 16px;
   }
 
-  /* Remove vertical line & timeline icons */
+  /* hide decorative vertical line + dots */
   .hackathon .line,
   .hackathon .fi-2,
   .hackathon .fi-3,
@@ -1836,90 +1881,42 @@
     display: none;
   }
 
-  /* Force timeline text to wrap */
-  .hackathon .text-wrapper-14,
-  .hackathon .element-november-to,
-  .hackathon .element-november {
-    white-space: normal;
-  }
-
-
-  /* ===================================================
-     *** FINAL FIX: TEAM COMPOSITION + ELIGIBLE PARTICIPANTS ***
-     =================================================== */
-
-  /* BULLET ROW — root cause of overflow */
-  .hackathon .frame-9 {
-    display: flex;
-    flex-wrap: wrap !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    align-items: flex-start !important;
-  }
-
-  /* text container inside bullet row */
-  .hackathon .frame-36 {
-    flex: 1 1 auto !important;
-    min-width: 0 !important;   /* ★ prevents flex overflow */
-  }
-
-  /* bullet icons should not shrink */
-  .hackathon .img-2 {
-    flex-shrink: 0 !important;
-  }
-
-  /* wrap bullet text */
-  .hackathon .text-wrapper-15 {
-    white-space: normal !important;
-    word-break: break-word !important;
-    overflow-wrap: break-word !important;
-  }
-
-  /* titles: Team Composition / Eligible Participants */
-  .hackathon .text-wrapper-14 {
-    white-space: normal !important;
-  }
-
-
-  /* ===================================================
-     DEADLINES / REGISTRATION / CONTACT
-     =================================================== */
-
-  .hackathon .text-wrapper-27 {
-    white-space: normal !important;
-  }
-
-  .hackathon .https-www-linkedin {
-    word-break: break-all !important;
-    white-space: normal !important;
-  }
-
-  .hackathon .pngdigitalid {
-    overflow-wrap: anywhere !important;
-    white-space: normal !important;
-  }
-
-
-  /* ===================================================
-     FOOTER
-     =================================================== */
-
-  .hackathon .rectangle-5 {
-    position: relative;
-    width: 100%;
-    height: auto;
-    padding: 16px 0;
-    background-color: #303b6e;
+  /* -------- DEADLINES STRIP -------- */
+  .hackathon .frame-38 {
     margin-top: 32px;
   }
 
+  .hackathon .frame-39 {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* -------- REGISTRATION & CONTACT -------- */
+  .hackathon .frame-42,
+  .hackathon .frame-49 {
+    padding: 16px;
+  }
+
+  /* -------- FOOTER: no big gap, full width -------- */
+  .hackathon .rectangle-5 {
+    position: relative;
+    top: auto;
+    left: 0;
+    width: 100%;
+    height: auto;
+    margin-top: 32px;
+    padding: 16px 0;
+    background-color: #303b6e;  /* keep your footer colour */
+  }
+
   .hackathon .footer-inner {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 16px;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 0 16px;
-    box-sizing: border-box;
-    width: 100%;
     gap: 8px;
   }
 
@@ -1928,21 +1925,66 @@
     white-space: normal;
   }
 
-  /* make all images responsive */
-  img {
+  .hackathon .frame-56 {
+    display: flex;
+    gap: 12px;
+  }
+
+  /* images scale down on mobile */
+  .hackathon img {
     max-width: 100%;
     height: auto;
   }
+
+  /* =====================================================
+     FINAL FIX: Team Composition + Eligible Participants
+     (prevent horizontal overflow in bullet rows)
+     ===================================================== */
+
+  /* Bullet row container (icon + text) */
+  .hackathon .frame-9 {
+    display: flex;
+    flex-wrap: wrap !important;       /* allow text to go under icon */
+    width: 100% !important;
+    max-width: 100% !important;
+    align-items: flex-start !important;
+  }
+
+  /* Text container inside bullet row */
+  .hackathon .frame-36 {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;          /* critical: prevent flex overflow */
+  }
+
+  /* Bullet icon */
+  .hackathon .img-2 {
+    flex-shrink: 0 !important;
+  }
+
+  /* Bullet text */
+  .hackathon .text-wrapper-15 {
+    white-space: normal !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+
+  /* Titles: "Team Composition" / "Eligible Participants" */
+  .hackathon .text-wrapper-14 {
+    white-space: normal !important;
+  }
 }
 
-
 /* ===================================================
-   SMALL PHONES (extra polish)
+   SMALL PHONES (extra tweaks)
    =================================================== */
 @media (max-width: 600px) {
 
-  .hackathon .text-wrapper-11,
+  .hackathon .frame-2 {
+    padding-top: 72px;
+  }
+
   .hackathon .text-wrapper-4,
+  .hackathon .text-wrapper-11,
   .hackathon .text-wrapper-18 {
     font-size: 24px;
   }
