@@ -2191,3 +2191,24 @@
     text-decoration: underline; /* keep underline if you like it */
   }
 }
+
+/* Add breathing room on mobile/tablet for all cards */
+@media (max-width: 1024px) {
+  .hackathon .frame-27,
+  .hackathon .frame-37,
+  .hackathon .frame-30,
+  .hackathon .frame-40,
+  .hackathon .frame-42,
+  .hackathon .frame-49,
+  .hackathon .frame-7,
+  .hackathon .frame-12,
+  .hackathon .frame-31,
+  .hackathon .frame-14,
+  .hackathon .frame-20,
+  .hackathon .frame-21,
+  .hackathon .frame-22 {
+    margin-left: 12px !important;
+    margin-right: 12px !important;
+    width: calc(100% - 24px) !important;  /* prevents overflow */
+  }
+}
