@@ -340,12 +340,13 @@
 
 .hackathon .frame-9 {
   display: flex;
-  align-items: center;
+  align-items: flex-start;   /* was center */
   gap: 12px;
   position: relative;
   align-self: stretch;
   width: 100%;
   flex: 0 0 auto;
+  flex-wrap: wrap;
 }
 
 .hackathon .text-wrapper-7 {
@@ -575,7 +576,7 @@
   font-size: 18px;
   letter-spacing: 0;
   line-height: normal;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .hackathon .element-november-to {
@@ -1109,6 +1110,7 @@
   position: relative;
   flex: 1;
   flex-grow: 1;
+  min-width: 0;
 }
 
 .hackathon .frame-37 {
@@ -1203,7 +1205,8 @@
   font-size: 18px;
   letter-spacing: 0;
   line-height: normal;
-  white-space: nowrap;
+  white-space: normal;        /* was nowrap */
+  overflow-wrap: break-word; 
 }
 
 .hackathon .div-2 {
@@ -1534,7 +1537,7 @@
 
 .hackathon .https-www-linkedin {
   position: relative;
-  width: fit-content;
+  width: 100%;                /* was fit-content */
   margin-top: -1.00px;
   font-family: "Roboto-Medium", Helvetica;
   font-weight: 500;
@@ -1542,6 +1545,9 @@
   font-size: 16px;
   letter-spacing: 0;
   line-height: normal;
+  white-space: normal;        /* allow wrapping */
+  word-break: break-all;      /* break even inside long URL chunks */
+  overflow-wrap: anywhere;
 }
 
 .hackathon .frame-55 {
@@ -1572,6 +1578,8 @@
   font-size: 16px;
   letter-spacing: 0;
   line-height: normal;
+  white-space: normal;        /* allow wrapping */
+  overflow-wrap: anywhere;
 }
 
 .hackathon .text-wrapper-32 {
