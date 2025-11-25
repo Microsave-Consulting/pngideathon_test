@@ -2036,3 +2036,43 @@ body {
     overflow-wrap: anywhere;
   }
 }
+/* =========================================
+   FINAL tiny mobile fix: stop overflow from
+   Recognition + Questions/Stay Connected
+   ========================================= */
+@media (max-width: 768px) {
+
+  /* Recognition card */
+  .hackathon .frame-31 {
+    position: relative !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+  }
+
+  /* Let "Recognition" heading wrap if needed */
+  .hackathon .text-wrapper-21 {
+    white-space: normal !important;
+  }
+
+  /* Bottom Questions / Stay Connected block */
+  .hackathon .frame-49 {
+    position: relative !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+  }
+
+  /* Make sure long URLs and hashtags can break */
+  .https-www-linkedin {
+    white-space: normal !important;
+    word-break: break-word;
+  }
+
+  .pngdigitalid {
+    white-space: normal !important;
+    overflow-wrap: anywhere;
+  }
+}
