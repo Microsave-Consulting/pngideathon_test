@@ -2314,3 +2314,15 @@
     margin-top: 16px;          /* space between heading and first card */
   }
 }
+/* FINAL MOBILE ADJUST: spacing for "The details" section */
+@media (max-width: 1024px) {
+  /* "The details" heading */
+  .hackathon .frame-25 {
+    margin: 48px auto 12px !important;   /* extra gap before heading */
+  }
+
+  /* benefit cards row under "The details" */
+  .hackathon .frame-26 {
+    margin: 12px auto 0 !important;      /* small gap below heading */
+  }
+}
