@@ -1687,61 +1687,63 @@
 
 
 
-/* Remove tiny overflow from hero background on smaller desktops */
-@media (min-width: 1025px) and (max-width: 1439px) {
-  .hackathon .overlap-group {
-    background-size: cover !important;          /* instead of stretching */
-    background-position: right center !important; 
-    background-repeat: no-repeat !important;
-
-    width: 100% !important;
-    min-width: 0 !important;
-    overflow-x: hidden !important;
-  }
-
-  .hackathon .frame-2 {
-    width: 100% !important;
-    left: 0 !important;
-    overflow-x: hidden !important;
-  }
-
-  /* Extra safety: no element may exceed viewport */
-  .hackathon * {
-    max-width: 100% !important;
-  }
-}
-
-
-
-/* Desktop but smaller than 1440px – remove hard 1440px widths */
+/* Smaller desktops (1025–1439px): fix hero + keep content inside viewport */
 @media (min-width: 1025px) and (max-width: 1439px) {
 
-  /* allow main container to shrink */
+  /* let the main container follow the viewport width */
   .hackathon {
     min-width: 0;
     width: 100%;
+    overflow-x: hidden;
   }
 
-  /* hero/nav + background bands should follow viewport width */
+  /* nav + all background bands stretch full width */
   .hackathon .nav-bar,
   .hackathon .frame-2,
   .hackathon .rectangle-2,
   .hackathon .rectangle-3,
   .hackathon .rectangle-4,
   .hackathon .rectangle-5 {
-    left: 0;
-    width: 100%;
+    left: 0 !important;
+    width: 100% !important;
   }
 
-  /* hero background image: fill but don’t overflow */
+  /* hero background image: fill the width, no horizontal overflow */
   .hackathon .overlap-group {
-    min-width: 0;
-    width: 100%;
-    background-size: cover;
-    background-position: right center;
-    background-repeat: no-repeat;
+    min-width: 0 !important;
+    width: 100% !important;
+    background-size: cover !important;
+    background-position: right center !important;
+    background-repeat: no-repeat !important;
+    overflow-x: hidden !important;
+  }
+
+  /* hero band container itself */
+  .hackathon .frame-2 {
+    overflow-x: hidden !important;
+  }
+
+  /* main content frames – keep them centred with side margins
+     (this includes the “Discover the benefits” cards etc.) */
+  .hackathon .frame-4,
+  .hackathon .frame-6,
+  .hackathon .frame-23,
+  .hackathon .frame-24,
+  .hackathon .frame-25,
+  .hackathon .frame-26,
+  .hackathon .frame-29,
+  .hackathon .frame-31,
+  .hackathon .frame-33,
+  .hackathon .frame-38,
+  .hackathon .frame-42,
+  .hackathon .frame-49 {
+    left: 50% !important;
+    transform: translateX(-50%);          /* centre on screen */
+    width: calc(100% - 80px) !important;  /* 40px margin on each side */
+    max-width: 1268px;                    /* don’t exceed original width */
   }
 }
+
 
 
 /* ===================================================
