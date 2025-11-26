@@ -2265,10 +2265,9 @@
 }
 
 /* -------------------------
-   FINAL OVERRIDES START HERE
+   FIX: Only unlock content sections
    ------------------------- */
 
-/* STEP 1 — Reset layout: REMOVE absolute positioning */
 .hackathon .frame-4,
 .hackathon .frame-6,
 .hackathon .frame-23,
@@ -2293,14 +2292,27 @@
   box-sizing: border-box !important;
 }
 
-/* STEP 2 — Fix inconsistent box heights */
+
+/* -------------------------
+   PROTECT HERO LAYOUT
+   ------------------------- */
+
+.hackathon .frame-2,
+.hackathon .overlap-group,
+.hackathon .p,
+.hackathon .frame-3,
+.hackathon .group,
+.hackathon .group-2 {
+  position: absolute !important;
+}
+
 .hackathon .frame-27,
 .hackathon .frame-30,
 .hackathon .frame-40 {
   height: auto !important;
 }
 
-/* STEP 3 — Mobile padding fixes */
+
 @media (max-width: 768px) {
   .hackathon .frame-27,
   .hackathon .frame-30,
@@ -2312,7 +2324,3 @@
     margin-right: 16px !important;
   }
 }
-
-/* -------------------------
-   FINAL OVERRIDES END HERE
-   ------------------------- */
