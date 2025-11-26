@@ -1687,6 +1687,32 @@
 
 
 
+/* Remove tiny overflow from hero background on smaller desktops */
+@media (min-width: 1025px) and (max-width: 1439px) {
+  .hackathon .overlap-group {
+    background-size: cover !important;          /* instead of stretching */
+    background-position: right center !important; 
+    background-repeat: no-repeat !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    overflow-x: hidden !important;
+  }
+
+  .hackathon .frame-2 {
+    width: 100% !important;
+    left: 0 !important;
+    overflow-x: hidden !important;
+  }
+
+  /* Extra safety: no element may exceed viewport */
+  .hackathon * {
+    max-width: 100% !important;
+  }
+}
+
+
+
 /* ===================================================
    GLOBAL: avoid horizontal scroll on small screens
    =================================================== */
