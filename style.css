@@ -2264,63 +2264,38 @@
   }
 }
 
-/* -------------------------
-   FIX: Only unlock content sections
-   ------------------------- */
-
-.hackathon .frame-4,
-.hackathon .frame-6,
-.hackathon .frame-23,
-.hackathon .frame-24,
-.hackathon .frame-25,
-.hackathon .frame-26,
-.hackathon .frame-29,
-.hackathon .frame-31,
-.hackathon .frame-33,
-.hackathon .frame-38,
-.hackathon .frame-42,
-.hackathon .frame-49,
-.hackathon .text-wrapper-11,
-.hackathon .group-4 {
-  position: relative !important;
-  top: auto !important;
-  left: auto !important;
-  transform: none !important;
-  width: 100% !important;
-  max-width: 1268px !important;
-  margin: 40px auto !important;
-  box-sizing: border-box !important;
+/* =========================================
+   The details – equalise card heights
+   ========================================= */
+.hackathon .frame-38 .frame-39 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  align-items: stretch;
 }
 
-
-/* -------------------------
-   PROTECT HERO LAYOUT
-   ------------------------- */
-
-.hackathon .frame-2,
-.hackathon .overlap-group,
-.hackathon .p,
-.hackathon .frame-3,
-.hackathon .group,
-.hackathon .group-2 {
-  position: absolute !important;
+.hackathon .frame-38 .frame-40 {
+  height: 100%;
+  box-sizing: border-box;
 }
-
-.hackathon .frame-27,
-.hackathon .frame-30,
-.hackathon .frame-40 {
-  height: auto !important;
-}
-
 
 @media (max-width: 768px) {
-  .hackathon .frame-27,
-  .hackathon .frame-30,
+  .hackathon .frame-38 .frame-39 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================
+   Mobile spacing – Recognition / Registration / Questions
+   ========================================= */
+@media (max-width: 768px) {
   .hackathon .frame-31,
   .hackathon .frame-42,
   .hackathon .frame-49 {
-    padding: 20px !important;
-    margin-left: 16px !important;
-    margin-right: 16px !important;
+    position: relative;
+    left: auto;
+    width: calc(100% - 32px);
+    margin: 24px 16px 0;
+    box-sizing: border-box;
   }
 }
