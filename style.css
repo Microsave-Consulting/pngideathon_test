@@ -2346,5 +2346,27 @@
   }
 }
 
+/* FINAL FIX – "Questions?" emails on mobile */
+@media (max-width: 768px) {
 
+  /* the email rows inside the Questions card */
+  .hackathon .frame-51 .frame-9 {
+    flex-wrap: wrap;                /* icon on first line, email can drop below */
+    align-items: flex-start;
+  }
 
+  .hackathon .frame-51 .frame-9 a {
+    display: block;
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .hackathon .frame-51 .text-wrapper-28,
+  .hackathon .frame-51 .text-wrapper-29 {
+    margin-right: 0 !important;     /* kill the -78px hack */
+    width: 100% !important;         /* make text follow card width */
+    white-space: normal !important;
+    word-break: break-all !important;
+    overflow-wrap: anywhere !important;
+  }
+}
