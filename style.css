@@ -2263,3 +2263,56 @@
     text-decoration: underline; /* keep underline if you like it */
   }
 }
+
+/* -------------------------
+   FINAL OVERRIDES START HERE
+   ------------------------- */
+
+/* STEP 1 — Reset layout: REMOVE absolute positioning */
+.hackathon .frame-4,
+.hackathon .frame-6,
+.hackathon .frame-23,
+.hackathon .frame-24,
+.hackathon .frame-25,
+.hackathon .frame-26,
+.hackathon .frame-29,
+.hackathon .frame-31,
+.hackathon .frame-33,
+.hackathon .frame-38,
+.hackathon .frame-42,
+.hackathon .frame-49,
+.hackathon .text-wrapper-11,
+.hackathon .group-4 {
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  transform: none !important;
+  width: 100% !important;
+  max-width: 1268px !important;
+  margin: 40px auto !important;
+  box-sizing: border-box !important;
+}
+
+/* STEP 2 — Fix inconsistent box heights */
+.hackathon .frame-27,
+.hackathon .frame-30,
+.hackathon .frame-40 {
+  height: auto !important;
+}
+
+/* STEP 3 — Mobile padding fixes */
+@media (max-width: 768px) {
+  .hackathon .frame-27,
+  .hackathon .frame-30,
+  .hackathon .frame-31,
+  .hackathon .frame-42,
+  .hackathon .frame-49 {
+    padding: 20px !important;
+    margin-left: 16px !important;
+    margin-right: 16px !important;
+  }
+}
+
+/* -------------------------
+   FINAL OVERRIDES END HERE
+   ------------------------- */
