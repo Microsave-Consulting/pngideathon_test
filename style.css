@@ -262,14 +262,24 @@
   line-height: normal;
 }
 
+/* Desktop layout for the benefit cards */
 .hackathon .frame-6 {
   display: flex;
-  width: 1269px;
-  align-items: center;
-  gap: 24px;
+  flex-wrap: wrap;                  /* allows two rows */
+  justify-content: space-between;   /* makes columns align */
+  width: 1268px;                    /* keeps your original grid width */
+  gap: 24px;                        /* same spacing as before */
   position: absolute;
   top: 1126px;
   left: calc(50% - 634px);
+}
+
+
+/* Three equal columns for the benefit cards */
+.hackathon .frame-6 .frame-7,
+.hackathon .frame-6 .frame-12 {
+  flex: 0 1 calc((100% - 48px) / 3);   /* 3 cards per row */
+  box-sizing: border-box;
 }
 
 .hackathon .frame-7 {
