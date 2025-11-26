@@ -1713,6 +1713,37 @@
 
 
 
+/* Desktop but smaller than 1440px – remove hard 1440px widths */
+@media (min-width: 1025px) and (max-width: 1439px) {
+
+  /* allow main container to shrink */
+  .hackathon {
+    min-width: 0;
+    width: 100%;
+  }
+
+  /* hero/nav + background bands should follow viewport width */
+  .hackathon .nav-bar,
+  .hackathon .frame-2,
+  .hackathon .rectangle-2,
+  .hackathon .rectangle-3,
+  .hackathon .rectangle-4,
+  .hackathon .rectangle-5 {
+    left: 0;
+    width: 100%;
+  }
+
+  /* hero background image: fill but don’t overflow */
+  .hackathon .overlap-group {
+    min-width: 0;
+    width: 100%;
+    background-size: cover;
+    background-position: right center;
+    background-repeat: no-repeat;
+  }
+}
+
+
 /* ===================================================
    GLOBAL: avoid horizontal scroll on small screens
    =================================================== */
