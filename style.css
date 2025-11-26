@@ -2327,8 +2327,17 @@
   }
 }
 
-/* Mobile fix: allow email addresses in "Questions?" card to wrap */
+
+
+/* FIX mobile overflow for email row */
 @media (max-width: 768px) {
+  .hackathon .frame-9 a {
+    display: block !important;
+    white-space: normal !important;
+    word-break: break-all !important;
+    overflow-wrap: anywhere !important;
+  }
+
   .hackathon .text-wrapper-28,
   .hackathon .text-wrapper-29 {
     white-space: normal !important;
@@ -2336,3 +2345,6 @@
     overflow-wrap: anywhere !important;
   }
 }
+
+
+
