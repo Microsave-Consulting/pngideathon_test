@@ -1663,69 +1663,45 @@
   padding: 0 24px;
 }
 
-/* Fix hero overflow on smaller desktops (e.g. 1366px) */
-@media (max-width: 1439px) {
-  .hackathon .frame-2 {
-    /* allow the hero band to shrink with the viewport */
-    left: 0 !important;
-    width: 100% !important;
-    overflow-x: hidden;              /* safety */
-  }
 
-  .hackathon .overlap-group {
-    /* remove the rigid 1440px requirement */
-    min-width: 0 !important;
-    width: 100% !important;
-
-    /* keep background looking good while it scales */
-    background-size: cover !important;
-    background-position: center right !important;
-
-    overflow-x: hidden;              /* safety */
-  }
-}
-
-
-
-/* Smaller desktops (1025–1439px): fix hero + keep content inside viewport */
+/* Smaller desktops (1025–1439px):
+   fix hero overflow + keep content centred with gutters */
 @media (min-width: 1025px) and (max-width: 1439px) {
 
-  /* let the main container follow the viewport width */
+  /* main container follows viewport width */
   .hackathon {
     min-width: 0;
     width: 100%;
     overflow-x: hidden;
   }
 
-  /* nav + all background bands stretch full width */
+  /* nav + background bands stretch full width */
   .hackathon .nav-bar,
   .hackathon .frame-2,
   .hackathon .rectangle-2,
   .hackathon .rectangle-3,
   .hackathon .rectangle-4,
   .hackathon .rectangle-5 {
-    left: 0 !important;
-    width: 100% !important;
+    left: 0;
+    width: 100%;
   }
 
-  /* hero background image: fill the width, no horizontal overflow */
-  .hackathon .overlap-group {
-    min-width: 0 !important;
-    width: 100% !important;
-    background-size: cover !important;
-    background-position: right center !important;
-    background-repeat: no-repeat !important;
-    overflow-x: hidden !important;
-  }
-
-  /* hero band container itself */
+  /* hero background – fill width, no overflow */
   .hackathon .frame-2 {
-    overflow-x: hidden !important;
+    overflow-x: hidden;
   }
 
-  /* main content frames – keep them centred with side margins
-     (this includes the “Discover the benefits” cards etc.) */
-  .hackathon .frame-4,
+  .hackathon .overlap-group {
+    min-width: 0;
+    width: 100%;
+    background-size: cover;
+    background-position: right center;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+  }
+
+  /* content sections that were 1268px centred on 1440px */
+  .hackathon .frame-4,   /* “Discover the benefits…” cards */
   .hackathon .frame-6,
   .hackathon .frame-23,
   .hackathon .frame-24,
@@ -1737,13 +1713,20 @@
   .hackathon .frame-38,
   .hackathon .frame-42,
   .hackathon .frame-49 {
-    left: 50% !important;
-    transform: translateX(-50%);          /* centre on screen */
-    width: calc(100% - 80px) !important;  /* 40px margin on each side */
-    max-width: 1268px;                    /* don’t exceed original width */
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(1268px, calc(100% - 120px));  /* shrink on smaller screens, keep ~60px gutters */
+    box-sizing: border-box;
+  }
+
+  /* timeline block “The Ideathon Journey” */
+  .hackathon .group-4 {
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(1200px, calc(100% - 120px));
+    box-sizing: border-box;
   }
 }
-
 
 
 /* ===================================================
