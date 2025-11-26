@@ -2299,3 +2299,18 @@
     box-sizing: border-box;
   }
 }
+
+/* ---------------------------------
+   Mobile spacing for "The details"
+   ---------------------------------*/
+@media (max-width: 1024px) {
+  /* "The details" heading block */
+  .hackathon .frame-25 {
+    margin-top: 40px;          /* pushes the heading down a bit */
+  }
+
+  /* The three benefit cards row */
+  .hackathon .frame-26 {
+    margin-top: 16px;          /* space between heading and first card */
+  }
+}
