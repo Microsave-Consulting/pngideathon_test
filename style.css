@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 .hackathon {
   background-color: #ffffff;
   width: 100%;
@@ -2370,3 +2374,4 @@
     overflow-wrap: anywhere !important;
   }
 }
+
