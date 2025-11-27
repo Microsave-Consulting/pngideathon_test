@@ -1738,6 +1738,14 @@ html {
   .hackathon .frame-3 {
     left: 87px;     /* match .hackathon .p */
   }
+  .hackathon .p {
+    width: 420px;       /* was 637px on desktop */
+  }
+
+  /* Make sure it can wrap normally */
+  .hackathon .p {
+    white-space: normal;
+  }
 }
 
 
