@@ -2448,3 +2448,127 @@ html {
   }
 }
 
+/* ===============================
+   HERO OVERRIDE: title + map side-by-side on ALL widths
+   =============================== */
+
+.hackathon .frame-2 {
+  /* cancel old absolute layout as much as possible */
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+
+  background-color: #303b6e;
+  box-sizing: border-box;
+
+  /* layout: title+map row, then tagline, then button */
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  padding: 80px 24px 40px;  /* adjust if you want more side padding */
+}
+
+/* title SVG + map SVG container */
+.hackathon .overlap-group {
+  position: relative;           /* no more absolute */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+  background-image: none;       /* map is now the <img>, not bg */
+}
+
+/* make both SVGs scale */
+.hackathon .overlap-group img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* left: title SVG */
+.hackathon .group-2 {
+  flex: 1 1 50%;
+  max-width: 50%;
+}
+
+/* right: map SVG */
+.hackathon .group {
+  flex: 1 1 50%;
+  max-width: 50%;
+}
+
+/* tagline & button: order and spacing */
+.hackathon .frame-2 > .p {
+  order: 2;                     /* tagline ABOVE button */
+  margin: 0;
+  font-size: 27px;
+  color: #ffffff;
+}
+
+.hackathon .frame-2 > a {
+  order: 3;                     /* button below tagline */
+}
+
+.hackathon .frame-3 {
+  position: relative;           /* kill old absolute */
+  top: auto;
+  left: auto;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+
+  border-radius: 12px;
+  box-shadow: 0 0 6.2px #8c8c8c52;
+  background: #ffffff;
+}
+
+/* -------------------------
+   RESPONSIVE TWEAKS
+   ------------------------- */
+
+/* small desktops & tablets: keep row but give map/text more breathing room */
+@media (max-width: 1024px) {
+  .hackathon .frame-2 {
+    padding: 64px 16px 32px;
+  }
+
+  .hackathon .group-2,
+  .hackathon .group {
+    flex: 1 1 50%;
+    max-width: 50%;
+  }
+
+  .hackathon .frame-2 > .p {
+    font-size: 20px;
+  }
+}
+
+/* very small screens: still side-by-side, just tighter */
+@media (max-width: 600px) {
+  .hackathon .frame-2 {
+    padding: 48px 12px 24px;
+  }
+
+  .hackathon .overlap-group {
+    gap: 8px;
+  }
+
+  .hackathon .group-2,
+  .hackathon .group {
+    flex: 1 1 50%;
+    max-width: 50%;
+  }
+
+  .hackathon .frame-2 > .p {
+    font-size: 18px;
+  }
+}
