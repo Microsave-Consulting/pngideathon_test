@@ -1738,13 +1738,13 @@ html {
   .hackathon .frame-3 {
     left: 87px;     /* match .hackathon .p */
   }
-  .hackathon .p {
-    width: 420px;       /* was 637px on desktop */
-  }
 
-  /* Make sure it can wrap normally */
+
   .hackathon .p {
-    white-space: normal;
+    left: 87px;          /* same gutter as desktop */
+    width: auto;         /* cancel fixed 637px/420px width */
+    max-width: 320px;    /* <= this is the key: tighten the text block */
+    white-space: normal; /* allow wrapping within that width */
   }
 }
 
