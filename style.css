@@ -2334,10 +2334,11 @@ html {
   }
 
     .hackathon .frame-2 {
-    /* your existing rules here... */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+        align-items: flex-start !important;
+        width: 100%;
+        box-sizing: border-box;
     }
 
   .hackathon .frame-3 {
