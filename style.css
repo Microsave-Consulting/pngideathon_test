@@ -108,33 +108,47 @@ html {
   background-color: #303b6e;
 }
 
+/* container that holds BOTH SVGs side-by-side */
 .hackathon .overlap-group {
-  position: absolute;
-  height: 589px;
-  top: 0;
-  left: 0;
+  position: relative;                 /* no more absolute hero background */
   display: flex;
-  padding: 75px 45.1px;
-  justify-content: flex-end;
-  align-items: flex-end;
-  min-width: 1440px;
-  background-image: url(./img/group.png);
-  background-size: 100% 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 75px 45px;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+  background-image: none;             /* we now use <img>, not bg image */
+  background-size: contain;
+  box-sizing: border-box;
 }
 
-.hackathon .group {
-  width: 632px;
-  height: 430px;
-  aspect-ratio: 1.47;
-}
-
+/* title SVG (Papua New Guinea, etc.) */
 .hackathon .group-2 {
-  position: absolute;
-  width: 42.02%;
-  height: 32.12%;
-  top: 19.35%;
-  left: 5.90%;
+  position: static;                   /* kill absolute */
+  flex: 1 1 50%;
+  max-width: 50%;
+  height: auto;
+  max-height: 100%;
 }
+
+/* PNG map SVG */
+.hackathon .group {
+  position: static;                   /* ensure no absolute here */
+  flex: 1 1 50%;
+  max-width: 50%;
+  height: auto;
+  max-height: 100%;
+}
+
+/* make sure both images scale nicely */
+.hackathon .overlap-group img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 
 .hackathon .frame-3 {
   display: inline-flex;
