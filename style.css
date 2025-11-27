@@ -2085,8 +2085,8 @@ html {
   }
 
   .hackathon .frame-3 {
-    width: 100%;
-    justify-content: center;
+    width: auto;
+    justify-content: flex-start;
   }
 }
 
@@ -2333,32 +2333,40 @@ html {
     margin: 12px auto 0 !important;      /* small gap below heading */
   }
 
-    .hackathon .frame-2 {
-    /* your existing rules here... */
+  .hackathon .frame-2 {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+
+    /* FLEX LAYOUT FOR STACKING */
     display: flex;
     flex-direction: column;
-    align-items: center;
-    }
+    align-items: flex-start;        /* ⬅ left-align children, not center */
+
+    /* NICE GUTTERS SO BUTTON ISN'T ON THE EDGE */
+    padding: 80px 24px 32px;        /* top | left/right | bottom */
+    box-sizing: border-box;
+  }
 
   .hackathon .frame-3 {
-    position: relative;    /* cancel absolute from desktop */
+    position: relative;
     top: auto;
     left: auto;
-    margin: 24px auto 0;   /* centers horizontally */
-    display: inline-flex;  /* keeps it sized to content */
+    margin-top: 24px;       /* space under the heading */
+    margin-left: 0;         /* starts at the 24px gutter from .frame-2 */
   }
 
   /* Center the line of text under it */
   .hackathon .p {
-    position: relative;    /* you already set this */
+    position: relative;
     top: auto;
     left: auto;
     width: 100%;
-    margin-top: 12px;
+    margin: 16px 0 0;
     font-size: 20px;
-    padding-right: 0;
-
-    text-align: center;    /* <— this is the key bit */
+    text-align: left;       /* just in case something else is centering it */
   }
   
 }
