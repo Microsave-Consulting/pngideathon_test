@@ -2337,7 +2337,7 @@ html {
     /* your existing rules here... */
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     }
 
   .hackathon .frame-3 {
