@@ -1703,11 +1703,14 @@ html {
   .hackathon .overlap-group {
     min-width: 0;
     width: 100%;
+    padding: 75px 40px;      /* or 45px if you prefer, but keep it symmetric */
+    box-sizing: border-box;  /* <--- THIS is the key line */
     background-size: cover;
     background-position: right center;
     background-repeat: no-repeat;
     overflow-x: hidden;
   }
+
 
   /* content sections that were 1268px centred on 1440px */
   .hackathon .frame-4,   /* “Discover the benefits…” cards */
@@ -2395,6 +2398,7 @@ html {
   }
   
 }
+
 
 
 
