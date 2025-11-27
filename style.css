@@ -100,12 +100,21 @@ html {
 }
 
 .hackathon .frame-2 {
-  position: absolute;
-  top: 72px;
-  left: calc(50.00% - 720px);
-  width: 1440px;
-  height: 589px;
+  position: relative !important;   /* no absolute */
+  top: 0 !important;
+  left: 0 !important;
+
+  width: 100% !important;
+  height: auto !important;         /* allow it to grow */
+
   background-color: #303b6e;
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  padding: 96px 80px 56px;          /* adjust if needed */
+  box-sizing: border-box;
 }
 
 /* container that holds BOTH SVGs side-by-side */
@@ -201,13 +210,16 @@ html {
 }
 
 .hackathon .rectangle-2 {
-  position: absolute;
-  top: 661px;
-  left: calc(50.00% - 720px);
-  width: 1440px;
-  height: 808px;
+  position: relative !important;
+  top: 0 !important;
+  left: 0 !important;
+
+  width: 100% !important;
+  height: auto !important;          /* avoid fixed blocks pushing up */
+
   background-color: #f7f9fb;
 }
+
 
 .hackathon .frame-4 {
   display: flex;
@@ -2871,4 +2883,21 @@ html {
   .hackathon .frame-2 .group {
     max-width: 100%;
   }
+}
+
+/* HERO FINAL FIX */
+.hackathon .frame-2 {
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+
+    width: 100% !important;
+    height: auto !important;
+
+    padding: 96px 80px 56px;
+    background-color: #303b6e;
+
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
