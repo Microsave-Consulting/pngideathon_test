@@ -1735,6 +1735,9 @@ html {
     width: min(1200px, calc(100% - 120px));
     box-sizing: border-box;
   }
+  .hackathon .frame-3 {
+    left: 87px;     /* match .hackathon .p */
+  }
 }
 
 
@@ -2329,6 +2332,35 @@ html {
   .hackathon .frame-26 {
     margin: 12px auto 0 !important;      /* small gap below heading */
   }
+
+    .hackathon .frame-2 {
+    /* your existing rules here... */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+
+  .hackathon .frame-3 {
+    position: relative;    /* cancel absolute from desktop */
+    top: auto;
+    left: auto;
+    margin: 24px auto 0;   /* centers horizontally */
+    display: inline-flex;  /* keeps it sized to content */
+  }
+
+  /* Center the line of text under it */
+  .hackathon .p {
+    position: relative;    /* you already set this */
+    top: auto;
+    left: auto;
+    width: 100%;
+    margin-top: 12px;
+    font-size: 20px;
+    padding-right: 0;
+
+    text-align: center;    /* <— this is the key bit */
+  }
+  
 }
 
 
@@ -2374,3 +2406,4 @@ html {
     overflow-wrap: anywhere !important;
   }
 }
+
