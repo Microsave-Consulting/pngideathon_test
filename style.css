@@ -2376,6 +2376,13 @@ html {
     word-break: break-all !important;
     overflow-wrap: anywhere !important;
   }
+  .hackathon,
+  .hackathon .frame-2,
+  .hackathon .overlap-group {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
 }
+
 
 
