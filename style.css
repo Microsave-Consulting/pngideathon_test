@@ -1703,14 +1703,11 @@ html {
   .hackathon .overlap-group {
     min-width: 0;
     width: 100%;
-    padding: 75px 40px;      /* or 45px if you prefer, but keep it symmetric */
-    box-sizing: border-box;  /* <--- THIS is the key line */
     background-size: cover;
     background-position: right center;
     background-repeat: no-repeat;
     overflow-x: hidden;
   }
-
 
   /* content sections that were 1268px centred on 1440px */
   .hackathon .frame-4,   /* “Discover the benefits…” cards */
@@ -1737,26 +1734,6 @@ html {
     transform: translateX(-50%);
     width: min(1200px, calc(100% - 120px));
     box-sizing: border-box;
-  }
-  .hackathon .frame-3 {
-    left: 87px;       /* same left offset as .hackathon .p */
-  }
-  .hackathon,
-  .hackathon .frame-2,
-  .hackathon .overlap-group {
-    max-width: 100vw;
-    overflow-x: hidden;
-  }
-   /* NAV BAR: prevent overflow from padding */
-  .hackathon .nav-bar {
-    box-sizing: border-box;     /* include padding inside the 100% width */
-    padding: 16px 40px;         /* a bit smaller side padding for this range */
-  }
-
-  /* Optional safety net – ok to include */
-  html,
-  body {
-    overflow-x: hidden;
   }
 }
 
@@ -2396,11 +2373,4 @@ html {
     word-break: break-all !important;
     overflow-wrap: anywhere !important;
   }
-  
 }
-
-
-
-
-
-
