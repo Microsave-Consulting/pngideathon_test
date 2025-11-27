@@ -2720,3 +2720,9 @@ html {
     max-width: 100%;
   }
 }
+
+@media (min-width: 1025px) {
+  .hackathon .frame-2 {
+    height: 589px;
+  }
+}
