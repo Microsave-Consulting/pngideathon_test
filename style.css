@@ -1744,6 +1744,17 @@ html {
     max-width: 100vw;
     overflow-x: hidden;
   }
+   /* NAV BAR: prevent overflow from padding */
+  .hackathon .nav-bar {
+    box-sizing: border-box;     /* include padding inside the 100% width */
+    padding: 16px 40px;         /* a bit smaller side padding for this range */
+  }
+
+  /* Optional safety net – ok to include */
+  html,
+  body {
+    overflow-x: hidden;
+  }
 }
 
 
@@ -2384,6 +2395,7 @@ html {
   }
   
 }
+
 
 
 
