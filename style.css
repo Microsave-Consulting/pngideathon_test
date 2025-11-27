@@ -3057,3 +3057,30 @@ html {
     max-width: 100%;
   }
 }
+
+/* ===========================
+   1280-ish overflow fix
+   =========================== */
+@media (min-width: 1025px) and (max-width: 1439px) {
+
+  /* make sure the page never gets wider than the viewport */
+  .hackathon {
+    min-width: 0;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* "Unlock the power of the SevisPass" block */
+  .hackathon .frame-4 {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+
+    /* always fit inside with nice side gutters */
+    width: calc(100% - 160px);
+    max-width: 1268px;
+    margin: 48px auto 0;
+    box-sizing: border-box;
+  }
+}
