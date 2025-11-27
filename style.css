@@ -1738,6 +1738,12 @@ html {
   .hackathon .frame-3 {
     left: 87px;       /* same left offset as .hackathon .p */
   }
+  .hackathon,
+  .hackathon .frame-2,
+  .hackathon .overlap-group {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
 }
 
 
@@ -2376,13 +2382,9 @@ html {
     word-break: break-all !important;
     overflow-wrap: anywhere !important;
   }
-  .hackathon,
-  .hackathon .frame-2,
-  .hackathon .overlap-group {
-    max-width: 100vw;
-    overflow-x: hidden;
-  }
+  
 }
+
 
 
 
