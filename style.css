@@ -2368,6 +2368,17 @@ html {
     font-size: 20px;
     text-align: left;       /* just in case something else is centering it */
   }
+  /* tagline above button */
+  .hackathon .frame-2 > .p {
+    order: 3;          /* comes before the button */
+    margin-top: 16px;
+  }
+
+  /* anchor containing the "More Details" button */
+  .hackathon .frame-2 > a {
+    order: 4;          /* comes after the tagline */
+    margin-top: 12px;
+  }
   
 }
 
