@@ -2572,3 +2572,132 @@ html {
     font-size: 18px;
   }
 }
+
+
+/* =========================================
+   HERO LAYOUT OVERRIDE (all widths ≥ ~900px)
+   ========================================= */
+
+.hackathon .frame-2 {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-width: 0;
+  height: auto;
+
+  background-color: #303b6e;
+
+  box-sizing: border-box;
+  padding: 96px 80px 56px;      /* adjust if you want more/less padding */
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+/* title SVG + map SVG side-by-side */
+.hackathon .overlap-group {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+
+  padding: 0;
+  background-image: none;       /* we now rely on the <img> elements */
+}
+
+.hackathon .overlap-group img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* left: title SVG */
+.hackathon .group-2 {
+  flex: 1 1 50%;
+  max-width: 50%;
+}
+
+/* right: map SVG */
+.hackathon .group {
+  flex: 1 1 50%;
+  max-width: 50%;
+}
+
+/* tagline – BELOW the title row, ABOVE the button */
+.hackathon .frame-2 > .p {
+  order: 2;
+  margin: 0;
+  font-family: "Roboto-Regular", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 27px;
+  letter-spacing: 0;
+  line-height: 1.3;
+  white-space: nowrap;          /* keep it on one line on tablet/desktop */
+}
+
+/* button – comes after tagline */
+.hackathon .frame-2 > a {
+  order: 3;
+}
+
+.hackathon .frame-3 {
+  position: relative;           /* cancel old absolute */
+  top: auto;
+  left: auto;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+
+  border-radius: 12px;
+  box-shadow: 0 0 6.2px #8c8c8c52;
+  background: #ffffff;
+}
+
+/* =========================================
+   Responsiveness
+   ========================================= */
+
+/* shrink padding + text size slightly for smaller desktops/tablets */
+@media (max-width: 1200px) {
+  .hackathon .frame-2 {
+    padding: 80px 40px 48px;
+  }
+
+  .hackathon .frame-2 > .p {
+    font-size: 22px;
+  }
+}
+
+/* phones: still side-by-side, but allow tagline to wrap if needed */
+@media (max-width: 900px) {
+  .hackathon .frame-2 {
+    padding: 64px 16px 40px;
+    gap: 20px;
+  }
+
+  .hackathon .overlap-group {
+    gap: 16px;
+  }
+
+  .hackathon .group-2,
+  .hackathon .group {
+    flex: 1 1 50%;
+    max-width: 50%;
+  }
+
+  .hackathon .frame-2 > .p {
+    font-size: 18px;
+    white-space: normal;        /* OK to wrap on very narrow screens */
+  }
+}
