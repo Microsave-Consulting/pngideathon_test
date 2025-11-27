@@ -1735,6 +1735,9 @@ html {
     width: min(1200px, calc(100% - 120px));
     box-sizing: border-box;
   }
+  .hackathon .frame-3 {
+    left: 87px;       /* same left offset as .hackathon .p */
+  }
 }
 
 
@@ -2374,4 +2377,5 @@ html {
     overflow-wrap: anywhere !important;
   }
 }
+
 
