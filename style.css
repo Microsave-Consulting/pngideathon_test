@@ -287,7 +287,7 @@ html {
   font-family: "Roboto-Regular", Helvetica;
   font-weight: 400;
   color: #000000;
-  font-size: 18px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: normal;
 }
@@ -1942,7 +1942,7 @@ html {
   .hackathon .text-wrapper-5,
   .hackathon .text-wrapper-10,
   .hackathon .text-wrapper-20 {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   /* -------- FIX: long text lines with their own scrollbar -------- */
