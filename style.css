@@ -3181,14 +3181,3 @@ html {
 .hackathon .msc-logo {
   max-height: 75px;
 }
-@media (min-width: 1025px) {
-  .hackathon .rectangle-3,
-  .hackathon .frame-23,
-  .hackathon .frame-26,
-  .hackathon .frame-29,
-  .hackathon .frame-31,
-  .hackathon .frame-24,
-  .hackathon .frame-25 {
-    transform: translateY(-180px);  /* tweak -180 to -150 / -200 as you like */
-  }
-}
