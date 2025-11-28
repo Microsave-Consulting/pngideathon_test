@@ -609,7 +609,7 @@ html {
   font-family: "Roboto-SemiBold", Helvetica;
   font-weight: 600;
   color: #000000;
-  font-size: 18px;
+  font-size: 16px;
   letter-spacing: 0;
   line-height: normal;
   white-space: normal;
@@ -715,6 +715,27 @@ html {
   border-radius: 16px;
   border: 1px solid;
   border-color: #f4f4f4;
+}
+
+.hackathon .digital-ID {
+  font-family: "Roboto-Regular", Helvetica;
+  font-size: 15px;         /* match your chosen .text-wrapper-15 size */
+  line-height: 25px;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.hackathon .digital-ID-list {
+  margin: 0 0 16px 18px;   /* indent bullets nicely */
+  padding: 0;
+  color: #555;
+  font-family: "Roboto-Regular", Helvetica;
+  font-size: 15px;         /* match paragraph text */
+  line-height: 25px;
+}
+
+.hackathon .digital-ID-list li {
+  margin-bottom: 6px;
 }
 
 .hackathon .frame-22 {
