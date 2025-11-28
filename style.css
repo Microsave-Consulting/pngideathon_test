@@ -726,11 +726,15 @@ html {
 }
 
 .hackathon .digital-ID-list {
-  margin: 0 0 16px 18px;   /* indent bullets nicely */
+  list-style-type: disc;          /* turn bullets back on */
+  list-style-position: outside;   /* normal bullet position */
+
+  margin: 0 0 16px 24px;          /* indent bullets a bit */
   padding: 0;
+
   color: #555;
   font-family: "Roboto-Regular", Helvetica;
-  font-size: 15px;         /* match paragraph text */
+  font-size: 15px;
   line-height: 25px;
 }
 
