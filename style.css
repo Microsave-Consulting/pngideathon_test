@@ -1967,7 +1967,9 @@ html {
     left: auto !important;
     width: 100%;
     margin: 40px 0 16px;
-    text-align: left !important;
+
+    text-align: center !important;  /* <-- center up to 1024px */
+
     padding-left: 16px;
     padding-right: 16px;
     box-sizing: border-box;
