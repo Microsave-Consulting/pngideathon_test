@@ -483,25 +483,27 @@ html {
 
 .hackathon .text-wrapper-11 {
   position: absolute;
-  top: 1543px;
-  left: calc(50.00% - 635px);
-  width: 1270px;
+  top: 1500px;          /* was 1543px – pulled up a bit */
+  left: 87px;           /* align with left edge of main content */
+  width: auto;          /* just as wide as needed */
   font-family: "Roboto-SemiBold", Helvetica;
   font-weight: 600;
   color: #000000;
   font-size: 44px;
-  text-align: center;
+  text-align: left;     /* left aligned instead of center */
   letter-spacing: 0;
   line-height: normal;
 }
 
+
 .hackathon .group-4 {
   position: absolute;
-  top: 1669px;
+  top: 1600px;          /* was 1669px – closer to heading */
   left: 120px;
   width: 1200px;
   height: 1250px;
 }
+
 
 .hackathon .frame-14 {
   display: flex;
@@ -3122,7 +3124,6 @@ html {
   max-width: 40%;         /* both logos shrink if needed */
   object-fit: contain;    /* clean proportional scaling */
 }
-
 .hackathon .msc-logo {
   max-height: 75px;
 }
