@@ -3100,3 +3100,24 @@ html {
     top: 1220px;   /* you can tweak to 1230/1240 if needed */
   }
 }
+.hackathon .organiser-logos {
+  display: flex;
+  align-items: center;
+  gap: 32px;              /* space between the two logos */
+  flex-wrap: wrap;        /* allows stacking on very narrow screens */
+}
+
+.hackathon .organiser-logo {
+  max-height: 120px;      /* approximate height of old combined SVG */
+  height: auto;
+  width: auto;
+}
+
+/* Optional fine-tuning if one logo should be slightly smaller/larger */
+.hackathon .dict-logo {
+  max-height: 120px;
+}
+
+.hackathon .msc-logo {
+  max-height: 120px;
+}
