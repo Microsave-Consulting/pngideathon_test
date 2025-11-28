@@ -482,23 +482,24 @@ html {
 }
 
 .hackathon .text-wrapper-11 {
-  position: absolute;
-  top: 1500px;          /* was 1543px – pulled up a bit */
-  left: 120px;           /* align with left edge of main content */
-  width: auto;          /* just as wide as needed */
+    position: absolute;
+  top: 1400px;          /* was 1500px – moved up 100px */
+  left: 120px;
+  width: auto;
+
   font-family: "Roboto-SemiBold", Helvetica;
   font-weight: 600;
   color: #000000;
   font-size: 28px;
-  text-align: left;     /* left aligned instead of center */
   letter-spacing: 0;
   line-height: normal;
+  text-align: left;
 }
 
 
 .hackathon .group-4 {
   position: absolute;
-  top: 1600px;          /* was 1669px – closer to heading */
+  top: 1480px;          /* was 1600px – moved up 120px */
   left: 120px;
   width: 1200px;
   height: 1250px;
@@ -1966,22 +1967,20 @@ html {
     top: auto !important;
     left: auto !important;
     width: 100%;
-    margin: 40px 0 16px;
-
-    text-align: center !important;  /* <-- center up to 1024px */
-
+    margin: 24px 0 12px;      /* was 40px 0 16px – less air */
+    text-align: center !important;
     padding-left: 16px;
     padding-right: 16px;
     box-sizing: border-box;
   }
 
-  .hackathon .group-4 {
+   .hackathon .group-4 {
     position: relative;
     top: auto;
     left: auto;
     width: 100%;
     height: auto;
-    margin: 0 auto 24px;
+    margin: 8px auto 24px;    /* small gap under heading */
     padding: 0 16px;
     box-sizing: border-box;
     display: flex;
