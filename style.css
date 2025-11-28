@@ -3123,11 +3123,4 @@ html {
   object-fit: contain;    /* clean proportional scaling */
 }
 
-/* Optional fine-tuning per logo */
-.hackathon .dict-logo {
-  max-height: 60px;
-}
 
-.hackathon .msc-logo {
-  max-height: 60px;
-}
