@@ -3100,24 +3100,34 @@ html {
     top: 1220px;   /* you can tweak to 1230/1240 if needed */
   }
 }
+/* Wrapper for the two logos */
 .hackathon .organiser-logos {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  gap: 32px;              /* space between the two logos */
-  flex-wrap: wrap;        /* allows stacking on very narrow screens */
+  justify-content: flex-start;
+
+  gap: 24px;              /* space between the logos */
+  flex-wrap: nowrap;      /* ❗ Always side-by-side, never wrapping */
+
+  max-width: 100%;
+  overflow: hidden;       /* prevents horizontal overflow */
 }
 
+/* Logo base styling */
 .hackathon .organiser-logo {
-  max-height: 120px;      /* approximate height of old combined SVG */
-  height: auto;
+  height: 60px;           /* base visual height */
   width: auto;
+
+  max-width: 40%;         /* both logos shrink if needed */
+  object-fit: contain;    /* clean proportional scaling */
 }
 
-/* Optional fine-tuning if one logo should be slightly smaller/larger */
+/* Optional fine-tuning per logo */
 .hackathon .dict-logo {
-  max-height: 120px;
+  max-height: 60px;
 }
 
 .hackathon .msc-logo {
-  max-height: 120px;
+  max-height: 60px;
 }
