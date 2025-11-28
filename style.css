@@ -299,7 +299,7 @@ html {
   align-items: stretch;              /* cards same height */
   gap: 24px;
   position: absolute;
-  top: 1126px;                       /* your original vertical position */
+  top: 1180px;                       /* your original vertical position */
   left: calc(50% - 634px);           /* centred 1268px container */
 }
 
@@ -3082,5 +3082,14 @@ html {
     max-width: 1268px;
     margin: 48px auto 0;
     box-sizing: border-box;
+  }
+}
+
+@media (max-width: 600px) {
+  .hackathon .frame-4 {
+    max-width: 92%;
+    margin: 24px auto 0;   /* keep it centered */
+    padding-left: 0;       /* padding handled by the narrower width */
+    padding-right: 0;
   }
 }
