@@ -484,7 +484,7 @@ html {
 .hackathon .text-wrapper-11 {
   position: absolute;
   top: 1500px;          /* was 1543px – pulled up a bit */
-  left: 87px;           /* align with left edge of main content */
+  left: 120px;           /* align with left edge of main content */
   width: auto;          /* just as wide as needed */
   font-family: "Roboto-SemiBold", Helvetica;
   font-weight: 600;
