@@ -858,6 +858,11 @@ html {
   left: 87px;
 }
 
+.hackathon .frame-23 {
+  width: min(1268px, calc(100% - 60px)) !important;
+  max-width: 100%;
+}
+
 .hackathon .text-wrapper-18 {
   position: relative;
   align-self: stretch;
@@ -868,6 +873,9 @@ html {
   font-size: 44px;
   letter-spacing: 0;
   line-height: normal;
+}
+.hackathon .text-wrapper-18 {
+  white-space: nowrap;
 }
 
 .hackathon .frame-24 {
