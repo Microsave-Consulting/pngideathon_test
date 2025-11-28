@@ -3093,3 +3093,10 @@ html {
     padding-right: 0;
   }
 }
+
+/* Extra breathing room for the cards on very wide desktops */
+@media (min-width: 1600px) {
+  .hackathon .frame-6 {
+    top: 1220px;   /* you can tweak to 1230/1240 if needed */
+  }
+}
