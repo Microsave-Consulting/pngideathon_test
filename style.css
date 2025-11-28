@@ -3116,9 +3116,9 @@ html {
 
 /* Logo base styling */
 .hackathon .organiser-logo {
-  height: 60px;           /* base visual height */
+  height: 90px;           /* base visual height */
   width: auto;
-
+  max-height: 90px;
   max-width: 40%;         /* both logos shrink if needed */
   object-fit: contain;    /* clean proportional scaling */
 }
