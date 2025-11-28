@@ -299,7 +299,7 @@ html {
   align-items: stretch;              /* cards same height */
   gap: 24px;
   position: absolute;
-  top: 1180px;                       /* your original vertical position */
+  top: 1100px;                       /* your original vertical position */
   left: calc(50% - 634px);           /* centred 1268px container */
 }
 
